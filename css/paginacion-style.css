@@ -1,0 +1,19 @@
+*{margin:0;}
+
+#contenido{
+   background:#fff;
+   margin:0px auto;
+   overflow:hidden;
+   padding:0px 10px 4px 10px; 
+   border:1px solid #2E9AFE;
+   width:90%;
+   -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+input, select{
+   background:#fff;
+   border:1px solid #2E9AFE;
+   padding:5px;
+}

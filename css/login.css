@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+
+html{
+	background-color:#fff;
+}
+
+body{
+	background-color:#fff;
+	min-height: 600px;
+    padding:40px 0 0 0;
+}
+
+a, a:visited {
+	text-decoration:none;
+	outline:none;
+	color:#54a6de;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-qoxri0');
+	src:url('fonts/icomoon.eot?#iefix-qoxri0') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-qoxri0') format('woff'),
+		url('fonts/icomoon.ttf?-qoxri0') format('truetype'),
+		url('fonts/icomoon.svg?-qoxri0#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-usuario:before {
+	content: "\e601";
+}
+.icon-clave:before {
+	content: "\e602";
+}
+
+
+
+
+section, footer{
+	display: block;
+}
+
+
+#contenido_form{
+	-moz-perspective: 800px;
+	-webkit-perspective: 800px;
+	perspective: 800px;
+	background: #e9eaee;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin:0 auto;
+	width:320px;
+	z-index:1;		
+	padding: 0 0 100px 0;	
+}
+
+
+#contenido_form form{
+	background: #e9eaee;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;		
+	padding: 100px 0 0 20px;
+
+	/* Enabling a smooth animated transition */
+	-moz-transition:0.8s;
+	-webkit-transition:0.8s;
+	transition:0.8s;
+	
+	/* Configure a keyframe animation for Firefox */
+	-moz-animation: pulse 2s infinite;
+	
+	/* Configure it for Chrome and Safari */
+	-webkit-animation: pulse 2s infinite;
+}
+
+
+
+/* ============================================================ */
+
+
+
+input[type=password]{
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+
+	font: 15px 'Segoe UI',Arial,sans-serif;
+	border: none;
+	height: 31px;
+	width: 228px;
+	text-indent: 8px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	color: #eee;
+	margin:  0 0 0 0;	
+}
+
+input[type=text]{
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+	margin:  0 0 10px 0;
+	font: 15px 'Segoe UI',Arial,sans-serif;
+	border: none;
+	height: 31px;
+	width: 228px;
+	text-indent: 8px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	color: #eee;
+}
+
+
+input[type=submit]{
+	
+	/* Submit button */
+	
+	opacity:0.9;
+	width: 239px;
+	height:36px;
+	cursor:pointer;
+	border-radius:6px;
+	box-shadow:0 1px 1px #888;
+	border:none;
+	color:#fff;
+	padding: 0 0 0 0;
+	margin: 8px 0 0 0;   
+
+	font:14px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
+	
+	/* CSS3 Gradients */
+	
+	background-image: linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(80,102,127)),
+		color-stop(0.5, rgb(87,109,136)),
+		color-stop(1, rgb(106,129,155))
+	);
+}
+
+input[type=submit]:hover{
+	opacity:1;
+}
+/*=========================================================*/
+
+footer{
+/*	background-color: #111111;*/
+	bottom: 0;
+	box-shadow: 0 -1px 2px #111111;
+	height: 45px;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 100000;
+	text-align:center;
+}
