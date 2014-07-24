@@ -60,22 +60,51 @@ while (($row = oci_fetch_object($result)) != false) {
 echo     $nombre = 'ORLANsdsfDO';
 echo     $contrasena = '100';
 
- echo   $consulta = "SELECT COD_PERSONA,NOMBRES FROM PERSONA WHERE COD_PERSONA = $contrasena AND NOMBRES LIKE2('$nombre')";
+ // echo   $consulta = "SELECT COD_PERSONA,NOMBRES FROM PERSONA WHERE COD_PERSONA = $contrasena AND NOMBRES LIKE2('$nombre')";
+ echo   $consulta = "SELECT * FROM PERSONA";
  echo '<p>... oci parce....</p>';
- echo    $result = oci_parse($conn, $consulta);
+ echo    $stid = oci_parse($conn, $consulta);
  echo '<p>... oci execture....</p>';
-      echo  oci_execute($result);
- echo '<p>............</p>';    
+   //   echo  oci_execute($result);
 
-$nrows = oci_fetch_all($result, $res);
+ 
+oci_execute($stid);
 
-echo "$nrows filas obtenidas<br>\n";
-//var_dump($res);
+while (($row = oci_fetch_array($stid, OCI_RETURN_NULLS)) != false) {
+ echo    $ncols = oci_num_fields($stid);
+    for ($col = 1; $col <= $ncols; $col++) {
+       echo  var_dump(oci_field_is_null($stid, $col));
+    }    
+}
 
 
 
-oci_free_statement($result);
-oci_close($conn);
+/*
+
+oci_execute($stid, OCI_DESCRIBE_ONLY); // Use OCI_DESCRIBE_ONLY if not fetching rows
+ echo '<p>...........</p>';
+$ncols = oci_num_rows($stid);
+
+ echo '<p>...........</p>';
+echo ' <table>
+         <tr>
+             <td>I</td>
+             <td>N</td>             
+         </tr>
+         ';
+for ($i = 1; $i <= $ncols; $i++) {
+echo '
+         <tr>
+             <td>   '.$i.'</td>
+             <td>   '.$ncols.'</td>             
+         </tr>    
+         ';
+}
+
+echo '</table>'; */
+
+
+
 
         ?>
 
