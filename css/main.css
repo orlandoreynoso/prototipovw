@@ -10,9 +10,14 @@
 
 
 .page-full-width {
-	height:80px;
+	-webkit-box-shadow: 0px 10px 28px 0px rgba(51, 50, 50, 0.73);
+	-moz-box-shadow:    0px 10px 28px 0px rgba(51, 50, 50, 0.73);
+	box-shadow:         0px 10px 28px 0px rgba(51, 50, 50, 0.73);
+	border-bottom: 3px solid #fff;
+	background: #e9eaed;
 	margin:0px auto;
 	padding:14px 0 0 0;
+	height:80px;	
 }
 
 /* ========== LOGOS ======================*/
@@ -72,12 +77,13 @@
 	display: inline-block;
 	text-decoration: none;
 	background-repeat: no-repeat;
+	text-align: center;
 }
 
 .dark {
 	background-color: #3f4551;
 	color: white;
-}
+}  
 
 .dark:hover {
 	background-color: #5d6677;
@@ -103,19 +109,12 @@
 .menu-logoff { background-image: url("../img/icons/menu/menu-logoff.png"); margin-top:20px; }
 .menu-logoff:hover { background-image: url("../img/icons/menu/menu-logoff-over.png"); }
 
-.menu-user { background-image: url("../img/icons/menu/menu-user.png"); }
+.menu-user { 
+		background-image: url("../img/icons/menu/menu-user.png"); 
+}
 
 /* =========================================================*/
 
-.image-left {
-	background-position: 0.833em center; /* 10/12 */
-	padding-left: 3em; /* 36/12 */
-}
-
-.image-right {
-	background-position: right center;
-	padding-right: 3em; /* 36/12 */
-}
 
 /* ==========================  MENU ======================================= */
 

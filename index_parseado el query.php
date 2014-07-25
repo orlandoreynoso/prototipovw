@@ -1,10 +1,10 @@
  <?php
- 
+
+/*======================= SEGUNDA SESION =====================================  */ 
 
 session_start();
 
-$valido = true;
-
+$valido=true;
 
       if(isset($_POST['entrar'])){
 
@@ -15,6 +15,8 @@ $valido = true;
     $contrasena=$_POST['contra'];
 
     echo   $consulta = "SELECT COD_PERSONA,NOMBRES FROM PERSONA WHERE COD_PERSONA = $contrasena AND NOMBRES LIKE2('$nombre')"; 
+
+
 
  $result = oci_parse($conn, $consulta);
          oci_execute($result);    
@@ -29,47 +31,32 @@ echo $filasn;
          }
          else{
 
-   echo 'entro en el ELSE';
 
-echo '<table>';
+while (($row = oci_fetch_array($result, OCI_BOTH)) != false) {
 
- $result = oci_parse($conn, $consulta);
-         oci_execute($result);    
-
-
-while ($row = oci_fetch_array($result, OCI_ASSOC+OCI_RETURN_NULLS)) {
-
-
-    echo "<tr>\n";
-    ECHO $row['COD_PERSONA'];
-    echo "</tr>\n";
-    echo "<tr>\n";
-    ECHO $row['NOMBRES'];
-    echo "</tr>\n";    
+    // Usar nombres de columna en mayúsculas para los índices del array asociativo
+    echo $row[0] . " y " . $row['COD_PERSONA']   . " son lo mismo<br>\n";
+    echo $row[1] . " y " . $row['NOMBRES'] . " son lo mismo<br>\n";
 
         $_SESSION['idusuario']= $row['COD_PERSONA'];
              $valido=true;
-             
              //guardamos en sesion el nombre del usuario 
              $_SESSION["usuario"]=$nombre;
              header("location:main.php?login=true");
              
-          
+             echo 'entro en el ELSE';
 
 }
 
-echo '</table>';
-
- oci_free_statement($result);
- oci_close($conn);
+oci_free_statement($result);
+oci_close($conn);
 
 
         
          }
-
-  }
-
+      }
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -106,9 +93,11 @@ echo '</table>';
         <div style="clear:both;"></div>        
     </div>    
 
+
+    
 </section>
-<footer>
-    <p>&copy; Copyright 2014&nbsp;&nbsp; <a href="#">AREA DE SISTEMAS</a>. &nbsp;&nbsp;Todos los derechos reservados.</p>
-</footer>
+    <footer>
+        <p><a href="https://twitter.com/orlandoreynoso">@orlandoreynoso</a></p>
+    </footer>
 </body>
 </html>
