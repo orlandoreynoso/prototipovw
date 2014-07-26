@@ -1,176 +1,121 @@
-@charset "utf-8";
+@font-face {
+	font-family: 'sesiones';
+	src: url('fonts/sesiones.eot');
+}
+@font-face {
+	font-family: 'sesiones';
+	src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMggi/LcAAAC8AAAAYGNtYXAaVcxYAAABHAAAAExnYXNwAAAAEAAAAWgAAAAIZ2x5ZgZCjhwAAAFwAAABMGhlYWQA7/xkAAACoAAAADZoaGVhA8IB5wAAAtgAAAAkaG10eAUAADUAAAL8AAAAGGxvY2EAwABeAAADFAAAAA5tYXhwAAkANgAAAyQAAAAgbmFtZfWiBQwAAANEAAABTnBvc3QAAwAAAAAElAAAACAAAwIAAZAABQAAAUwBZgAAAEcBTAFmAAAA9QAZAIQAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADmAQHg/+D/4AHgACAAAAABAAAAAAAAAAAAAAAgAAAAAAACAAAAAwAAABQAAwABAAAAFAAEADgAAAAKAAgAAgACAAEAIOYB//3//wAAAAAAIOYA//3//wAB/+MaBAADAAEAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAgAV/+sB1QHAAAcAFgAAJScXJxc3FzcnBxcnFwcTJzcHFzcXNxMBBFoBlwGVAVhDASwBrYMBKwEsAVQBvwHfWjkBQQE8W+BHK0gBKf7/AQQqBgFWQQGUAAEAIAAAAeABsAAzAAAlLgM1FD4CNz4CJic+AS4BByYOARYXDgEeARceAzUUDgIHDgMVBTQuAicBNwQEAgEKDg0DBwsEAwgBBA4pLS0pDgQBCAMECwcDDQ4KAQIEBA44OCsBwCs4OA6BAQoMCQEBDBMdDwEOFRQHBiwuJgEBJi4sBgcUFQ4BDx0TDAEBCQwKAQEYIi4XARksJBYDAAEAAAABAADsf2PPXw889QALAgAAAAAAz/hd3gAAAADP+F3eAAD/6wHgAcAAAAAIAAIAAAAAAAAAAQAAAeD/4AAAAgAAAAAAAeAAAQAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAABAAAAAgAAFQIAACAAAAAAAAoAFAAeAEoAmAAAAAEAAAAGADQAAgAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAOAK4AAQAAAAAAAQAQAAAAAQAAAAAAAgAOAE4AAQAAAAAAAwAQACYAAQAAAAAABAAQAFwAAQAAAAAABQAWABAAAQAAAAAABgAIADYAAQAAAAAACgA0AGwAAwABBAkAAQAQAAAAAwABBAkAAgAOAE4AAwABBAkAAwAQACYAAwABBAkABAAQAFwAAwABBAkABQAWABAAAwABBAkABgAQAD4AAwABBAkACgA0AGwAcwBlAHMAaQBvAG4AZQBzAFYAZQByAHMAaQBvAG4AIAAxAC4AMABzAGUAcwBpAG8AbgBlAHNzZXNpb25lcwBzAGUAcwBpAG8AbgBlAHMAUgBlAGcAdQBsAGEAcgBzAGUAcwBpAG8AbgBlAHMARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format('truetype'),
+		 url(data:application/font-woff;charset=utf-8;base64,d09GRk9UVE8AAATEAAoAAAAABHwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAA9AAAAS8AAAEvzNva6E9TLzIAAAIkAAAAYAAAAGAIIvy3Y21hcAAAAoQAAABMAAAATBpVzFhnYXNwAAAC0AAAAAgAAAAIAAAAEGhlYWQAAALYAAAANgAAADYA7/xkaGhlYQAAAxAAAAAkAAAAJAPCAedobXR4AAADNAAAABgAAAAYBQAANW1heHAAAANMAAAABgAAAAYABlAAbmFtZQAAA1QAAAFOAAABTvWiBQxwb3N0AAAEpAAAACAAAAAgAAMAAAEABAQAAQEBCXNlc2lvbmVzAAECAAEAOvgcAvgbA/gYBB4KABlT/4uLHgoAGVP/i4sMB4tr+JT4dAUdAAAAfw8dAAAAhBEdAAAACR0AAAEmEgAHAQEJERMVGB0ic2VzaW9uZXNzZXNpb25lc3UwdTF1MjB1RTYwMHVFNjAxAAACAYkABAAGAQEEBwoNSpn8lA78lA78lA77lA73mPdzFTLki1P7KouLS/cqi4tQ5OUFR/d1FYtDtmGL0vdAi/sWYYv7lGGLi5BgYIuG4IuLNvdUy4v4KQUO98v3FRWAjIuqi4uLi6yrkraei5a5eJuMnKP3CfsMi/sMi6P7CYx6eHuWXZ6LkmCsa4uLi4uLbICKCGeF+xlQi0sI+FSLBYvL+xnGZ5EIDviUFPiUFYsMCgAAAwIAAZAABQAAAUwBZgAAAEcBTAFmAAAA9QAZAIQAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADmAQHg/+D/4AHgACAAAAABAAAAAAAAAAAAAAAgAAAAAAACAAAAAwAAABQAAwABAAAAFAAEADgAAAAKAAgAAgACAAEAIOYB//3//wAAAAAAIOYA//3//wAB/+MaBAADAAEAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAEAAKIVbyhfDzz1AAsCAAAAAADP+F3eAAAAAM/4Xd4AAP/rAeABwAAAAAgAAgAAAAAAAAABAAAB4P/gAAACAAAAAAAB4AABAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAAEAAAACAAAVAgAAIAAAUAAABgAAAAAADgCuAAEAAAAAAAEAEAAAAAEAAAAAAAIADgBOAAEAAAAAAAMAEAAmAAEAAAAAAAQAEABcAAEAAAAAAAUAFgAQAAEAAAAAAAYACAA2AAEAAAAAAAoANABsAAMAAQQJAAEAEAAAAAMAAQQJAAIADgBOAAMAAQQJAAMAEAAmAAMAAQQJAAQAEABcAAMAAQQJAAUAFgAQAAMAAQQJAAYAEAA+AAMAAQQJAAoANABsAHMAZQBzAGkAbwBuAGUAcwBWAGUAcgBzAGkAbwBuACAAMQAuADAAcwBlAHMAaQBvAG4AZQBzc2VzaW9uZXMAcwBlAHMAaQBvAG4AZQBzAFIAZQBnAHUAbABhAHIAcwBlAHMAaQBvAG4AZQBzAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=) format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icono-"], [class*=" icono-"] {
+	font-family: 'sesiones';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icono-salir:before {
+	content: "\e600";
+	margin-right: 0.8em;
+	color: #cf0016;
+	text-decoration: none;	
+}
+
+.icono-usuario:before {
+	content: "\e601";
+	margin-right: 0.8em;
+	color: #7bc702;
+	text-decoration: none;
+}
 
 
-/* ======== cabecera ===================================*/
-#top-bar {
+header
+{
+	background: #e9e9e9;
+	width: 100;
+	height: 90px;
+	margin: 0 0 0 0;
+	padding: 10px 0 0 0; 
+
+}
+
+footer {
+	clear:both;
 	margin:0 auto;
-	padding:0;
-	background-color: #FFF;
+	height:50px;
+	text-align: center;
+	background-color:#EFEFEF;
+	padding:6px 0 0 0;
+}
+
+section{
+	width:90%;
+	min-height: 450px;
+	height:auto;
+	margin: 0 auto;
+}
+
+.botones{
+	background: #3f4551;	
+	border-radius: 0.3125em; /* 5/16 */
+	-moz-border-radius: 0.3125em; /* 5/16 */
+	-webkit-border-radius: 0.3125em; /* 5/16 */
+	padding: 0.833em; 
+	margin: 0 0 0 0;
+	color: #fff;
+	text-align: center;
+}
+
+.botones:hover {
+	color: #ecde03;
+}
+
+.btn_usuario, .btn_salir{
+	box-shadow: rgba(0,0,0,0.5) 5px 5px 20px;
+	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;		
 }
 
 
-.page-full-width {
-	-webkit-box-shadow: 0px 10px 28px 0px rgba(51, 50, 50, 0.73);
-	-moz-box-shadow:    0px 10px 28px 0px rgba(51, 50, 50, 0.73);
-	box-shadow:         0px 10px 28px 0px rgba(51, 50, 50, 0.73);
-	border-bottom: 3px solid #fff;
-	background: #e9eaed;
-	margin:0px auto;
-	padding:14px 0 0 0;
-	height:80px;	
+.container{
+	clear: both;
+	background: yellow;
 }
 
-/* ========== LOGOS ======================*/
-
-.kff{
-	float:right;
-	width:150px;
-	height:52px;
-	margin-right:80px;	
-}
-
-.kff img{
-	width:150px;
-	height:52px;	
-}
-
-
-.conap{
+.logo_medicine{
 	float:left;
-	width:77px;
-	height:65px;
-	margin-right:80px;	
+	width:130px;
+	height:95px;
+	margin-right:20px;
 }
 
-.conap img{
+.logo_medicine img{
 	width:77px;
 	height:65px;	
 }
 
 
-/* =======================  CLEARFIX ============================= */
-/* For modern browsers */
-.cf:before,
-.cf:after {
-    content: "";
-    display: table;
+.usuario{
+	position: absolute;
+	right: 0.5em;
+	top: 1.4em;
 }
 
-.cf:after { clear:both; }
-
-/* For IE 6/7 (trigger hasLayout) */
-.cf {
-	zoom: 1;
-	width: 100%;
-}
-
-/* ======================================================================= */
-
-.fl { float: left; }
-.fr { float: right; }
-.cb { clear: both; }
-
-
-/* ============= MENU BUTTONS ================== */
-.button {
-	padding: 0.833em; /* 10/12 */
-	display: inline-block;
+.usuario a{
 	text-decoration: none;
-	background-repeat: no-repeat;
-	text-align: center;
 }
 
-.dark {
-	background-color: #3f4551;
-	color: white;
-}  
-
-.dark:hover {
-	background-color: #5d6677;
-	color: white;
-}
-
-.round {
-	border-radius: 0.3125em; /* 5/16 */
-	-moz-border-radius: 0.3125em; /* 5/16 */
-	-webkit-border-radius: 0.3125em; /* 5/16 */
-}
-
-.menu-email { background-image: url("../img/icons/menu/menu-email.png"); }
-.menu-email:hover { background-image: url("../img/icons/menu/menu-email-over.png"); }
-.menu-email-special {
-	background-image: url("../img/icons/menu/menu-email-special.png");
-	color: #7fcdff;
-}
-	
-.menu-settings { background-image: url("../img/icons/menu/menu-settings.png"); }
-.menu-settings:hover { background-image: url("../img/icons/menu/menu-settings-over.png"); }
-
-.menu-logoff { background-image: url("../img/icons/menu/menu-logoff.png"); margin-top:20px; }
-.menu-logoff:hover { background-image: url("../img/icons/menu/menu-logoff-over.png"); }
-
-.menu-user { 
-		background-image: url("../img/icons/menu/menu-user.png"); 
-}
-
-/* =========================================================*/
 
 
-/* ==========================  MENU ======================================= */
-
-ul#nav {
-	list-style-type: none;
-}
-
-	ul#nav > li {
-		float: left;
-		margin-right: 0.312em; /* 5/16 */
-		position: relative;
-	}
-		ul#nav li:first-child { margin-left: 0; }
-		ul#nav li:hover ul { left: 0; /* On hover, we make the submenu visible again */ }	
-		/* Persistent hover state, exactly the same style as the inner anchor on hover (.dark:hover) */
-		ul#nav li:hover a {
-			background-color: #5d6677;
-			color: white;
-		}
-		
-	ul#nav li.v-sep {
-		border-right: 1px solid #3f4551;
-		margin-right: 0.625em; /* 10/16 */
-		padding-right: 0.625em; /* 10/16 */
-		margin-top:20px
-	}
-	
-	ul#nav li ul {
-		list-style-type: none;
-		position: absolute;
-		z-index: 999;
-		margin-top: -2px;
-		left: -9999px;
-	}
-		ul#nav li ul li a {
-			color: white;
-			padding: 0.833em 0 0.833em 3em;
-			border-top: 1px solid #6a7282;
-			background: #5d6677 url('../img/menu-indicator.png') no-repeat right center;
-			display: block;
-			width: 100%;
-			white-space: nowrap;
-		}
-			ul#nav li ul li:last-child a {
-				border-bottom-right-radius: 0.3125em; /* 5/16 */
-				border-bottom-left-radius: 0.3125em; /* 5/16 */
-				-moz-border-bottom-right-radius: 0.3125em; /* 5/16 */
-				-moz-border-bottom-left-radius: 0.3125em; /* 5/16 */
-				-webkit-border-bottom-right-radius: 0.3125em; /* 5/16 */
-				-webkit-border-bottom-left-radius: 0.3125em; /* 5/16 */
-			}
-
-			ul#nav li ul li a:hover { background-color: #7a8497; }
-			
-
-/* ======================== MAIN ============================================== */
 #contenido_general{
 	width:100%;
 	clear:both;
@@ -181,8 +126,8 @@ ul#nav {
 
 #formulariogenerico{
 	min-height:400px;
-	margin:4px 4px 4px 4px;
-	padding:0 0 0 0;
+	margin: 0 0 0 0;
+	padding:20px 0 0 20px;
 	color:#000;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -203,23 +148,8 @@ ul#nav {
 }
 
 #derecha{
-	width:90%;
-	height:400px;
-	height:auto;
-	margin:0 auto;
+
 }
 
 
 
-/* ---------- FOOTER ---------- */
-footer {
-	clear:both;
-	margin:0 auto;
-	height:50px;
-	text-align: center;
-	/*	padding: 1.875em 0; /* 30/16 */
-	background-color:#EFEFEF;
-	/*	background-image:url(../img/repetir2.jpg);
-	background-repeat:repeat-x;  */
-	padding:6px 0 0 0;
-}

@@ -14,7 +14,9 @@ $valido = true;
     $nombre=$_POST['usuario'];
     $contrasena=$_POST['contra'];
 
-    echo   $consulta = "SELECT COD_PERSONA,NOMBRES FROM PERSONA WHERE COD_PERSONA = $contrasena AND NOMBRES LIKE2('$nombre')"; 
+        $consulta = "SELECT USUARIO, CLAVE FROM EMPLEADO WHERE USUARIO LIKE('$nombre') AND CLAVE = $contrasena";
+
+//    echo   $consulta = "SELECT COD_PERSONA,NOMBRES FROM PERSONA WHERE COD_PERSONA = $contrasena AND NOMBRES LIKE2('$nombre')"; 
 
  $result = oci_parse($conn, $consulta);
          oci_execute($result);    
@@ -72,7 +74,7 @@ echo '</table>';
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

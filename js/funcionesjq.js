@@ -1,3 +1,4 @@
+
 function mostrar_contenido(valor1){
 
 //var parametros  = { "valor_neto1" : valor1, "valor_neto2" : valor2 };
@@ -5,7 +6,7 @@ var parametros  = { "valor_neto1" : valor1};
 
 $.ajax({
 	data: parametros,
-	url: 'librerias/cargarformularios.php',
+	url: 'libs/cargarformularios.php',
 	type: 'post',
 	async: true,
 	beforeSend: function(){ $("#formulariogenerico").html("Cargando el formulario..."); },
@@ -17,6 +18,4 @@ $.ajax({
 
 
 }
-
-
 

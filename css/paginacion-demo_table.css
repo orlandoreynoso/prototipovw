@@ -22,8 +22,8 @@
  *     no conflict between the two pagination types. If you want to use full_numbers pagination
  *     ensure that you either have "example_alt_pagination" as a body class name, or better yet,
  *     modify that selector.
- *   Note that the path used for Images is relative. All images are by default located in
- *     ../images/ - relative to this CSS file.
+ *   Note that the path used for img is relative. All img are by default located in
+ *     ../img/ - relative to this CSS file.
  */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -95,19 +95,19 @@
 }
 
 .paginate_disabled_previous {
-	background-image: url('../images/back_disabled.jpg');
+	background-image: url('../img/back_disabled.jpg');
 }
 
 .paginate_enabled_previous {
-	background-image: url('../images/back_enabled.jpg');
+	background-image: url('../img/back_enabled.jpg');
 }
 
 .paginate_disabled_next {
-	background-image: url('../images/forward_disabled.jpg');
+	background-image: url('../img/forward_disabled.jpg');
 }
 
 .paginate_enabled_next {
-	background-image: url('../images/forward_enabled.jpg');
+	background-image: url('../img/forward_enabled.jpg');
 }
 
 
@@ -175,23 +175,23 @@ table.display td.center {
  */
 
 .sorting_asc {
-	background: #E6E6E6 url('../images/sort_asc.png') no-repeat center right;
+	background: #E6E6E6 url('../img/sort_asc.png') no-repeat center right;
 }
 
 .sorting_desc {
-	background:#E6E6E6 url('../images/sort_desc.png') no-repeat center right;
+	background:#E6E6E6 url('../img/sort_desc.png') no-repeat center right;
 }
 
 .sorting {
-	background: #E6E6E6 url('../images/sort_both.png') no-repeat center right;
+	background: #E6E6E6 url('../img/sort_both.png') no-repeat center right;
 }
 
 .sorting_asc_disabled {
-	background: url('../images/sort_asc_disabled.png') no-repeat center right;
+	background: url('../img/sort_asc_disabled.png') no-repeat center right;
 }
 
 .sorting_desc_disabled {
-	background: url('../images/sort_desc_disabled.png') no-repeat center right;
+	background: url('../img/sort_desc_disabled.png') no-repeat center right;
 }
 
 
