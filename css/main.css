@@ -91,6 +91,74 @@ section{
 	background: yellow;
 }
 
+
+.confirmando_info{
+	background: #eeeeee;
+	width: 100%;
+	border-radius: 5px;
+	margin: 0 0 0 0;
+	padding:  20px 0 0 10px;
+	color: #084b95;
+}
+
+
+.cuadro{
+	float: left;
+	background: green;
+	margin: 0 10px 0 0;
+	padding-left: 2px 0 0 0;
+}
+
+.formulario{
+	text-align: right;
+	padding: 1em;
+}
+
+.formulario label{
+	text-align: left;
+}
+
+.formulario input{
+	border-radius: 5px;
+	padding:0.2em 0.6em;
+	clear: both;
+	text-align: left;
+}
+
+.formulario select{
+	border-radius: 5px;
+	padding:0.2em 0.6em;
+	margin: 0 0 0 0;
+	text-align: left;	
+}
+
+ 
+.formulario textarea{
+	border-radius: 5px;
+	padding:0.2em 0.6em;	
+	text-align: left;
+	height: 50px;
+}
+/*
+.formulario input[type="text"],
+.formulario input[type="url"]
+{
+border: 1px solid #888;
+} */
+
+
+.formulario input[type="submit"]{
+	background: #22BCE0;
+	border: 1px solid #22BCE0;
+	box-shadow: rgba(0,0,0,0.5) 5px 5px 20px;
+	font-style: italic;
+	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
+	color: white;
+
+}  
+
+}
+
 .logo_medicine{
 	float:left;
 	width:130px;
@@ -112,6 +180,19 @@ section{
 
 .usuario a{
 	text-decoration: none;
+}
+
+.tabla01{
+}
+
+.tabla01 td{
+/*	border: 1px solid #232222;*/
+	margin: 2px 0 0 0;
+	padding:3px; 
+	border-radius: 5px;
+	box-shadow: rgba(0,0,0,0.5) 5px 5px 20px;
+	font-style: italic;
+	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
 }
 
 

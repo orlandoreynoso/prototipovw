@@ -6,7 +6,6 @@ include('../libs/conexion-clase.php');
 
 $vars = $_POST;
 
-echo 'lelgo aqui en guardar persona.';
 
 if($vars['ingreso'] == 100)
 {

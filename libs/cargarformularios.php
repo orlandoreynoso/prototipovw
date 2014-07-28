@@ -23,6 +23,10 @@ switch($codigo_x){
 	break;
 
 
+	case 100:
+	include('../libs/ingreso-persona.php');
+	break;
+
 	default :
 	echo ' <h3>Seleccione una opcion GUARDAR</h3>';
 	break;

@@ -56,7 +56,7 @@
 	border: 1px solid #ddd;
 	text-align: center;
 	color: #999;
-	font-size: 14px;
+	font-size: 12px;
 	background-color: white;
 }
 
@@ -120,13 +120,15 @@
 th.acciones{
      color:#fff;
      background: #000;
-     font-size: 14px;
+     font-size: 12px;
 }
+
 table.display {
 	margin: 0 auto;
 	clear: both;
 	width: 100%;
-        color:#084B8A;
+    color:#084B8A;
+    font-size: 12px;
 	
 	/* Note Firefox 3.5 and before have a bug with border-collapse
 	 * ( https://bugzilla.mozilla.org/show%5Fbug.cgi?id=155955 ) 

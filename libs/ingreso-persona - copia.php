@@ -1,15 +1,8 @@
 
+<article class="confirmando_info">
+  
 <h1>Ingresar Persona</h1>
 
-<table class="confirmando_info">
-	<tr class="regresar">
-    	<td><span class="retornar">&raquo;</span><a href="<?php echo WB_URL; ?>/menu.php" >Menu</a></td>    
-    	<td><span class="retornar">&raquo;</span><a href="<?php echo WB_URL; ?>/ingresar.php?dat=201&cat=2" >Nuevo</a></td>
-    	<td><span class="retornar">&raquo;</span><a href="<?php echo WB_URL; ?>/buscar.php?dat=205&cat=2" >Buscar</a></td>        
-       	<td><span class="retornar">&raquo;</span><a href="<?php echo WB_URL; ?>/listar.php?dat=204&cat=2" >Listar</a></td>                
-    </tr>
-</table>	
- 
 
 <?php /*
 
@@ -42,17 +35,24 @@ $uno = htmlentities($filasn[0]) + 1;
 
 
 
-<h5 class="escribiendo">Agregar nueva persona&nbsp;&nbsp;&raquo;&nbsp;<span class="numeral">Confirmando No. <?php echo $uno; ?></span></h5>
-<form class="contact_form" name="formu_confi" method="post" action="libs/guardar-persona.php" >
+<h5 class="escribiendo">Agregar nueva persona&nbsp;&nbsp;&raquo;&nbsp;<span class="numeral">No. <?php echo $uno; ?></span></h5>
+<form class="contact_form formulario"  name="formu_confi" method="post" action="libs/guardar-persona.php" >
 		
 <div id="informacion_nuevo_cliente">
 <div style="clear:both;"></div>
 </div>
 
-    <table class="datos-basicos" >
+
+<div class="cuadro">
+  <input colspan="2" name="cod_persona" type="text" size="28" required="required" value="" placeholder ="CODIGO PERSONA"/>
+</div>
+
+
+    <table class="datos-basicos">
+	
       <tr>
        <td>CODIGO PERSONA&nbsp;<span class="red"> (*) </span></td -->
-       <td><input name="cod_persona" type="text" size="28" required="required" value="" placeholder ="CODIGO PERSONA"/></td>
+       <td><input colspan="2" name="cod_persona" type="text" size="28" required="required" value="" placeholder ="CODIGO PERSONA"/></td>
       </tr>              
                   
       <tr>
@@ -63,9 +63,9 @@ $uno = htmlentities($filasn[0]) + 1;
      </tr>   
 
       <tr>
-	 <td>FECHA INGRESO <span class="red">*</span>
-        <td>	
-            <select name="dia_in">
+	     <td>FECHA INGRESO &nbsp;<span class="red"> (*) </span></td>
+        <td colspan="1">	
+            <select name="dia_in"  class="seleccion">
             <option selected="selected" value="">[DIA]</option>
             <?php 
 			for($dato_mes = 1; $dato_mes <= 31; $dato_mes ++){  echo '<option value="'.$dato_mes.'">'.$dato_mes.'</option>';  }
@@ -88,7 +88,6 @@ $uno = htmlentities($filasn[0]) + 1;
                 <option value="12">Diciembre</option>
             </select>
             &nbsp;	
-            
              <select name="anio_in">
             <option selected="selected" value="">[AÑO]</option>
             <?php 
@@ -107,7 +106,7 @@ $uno = htmlentities($filasn[0]) + 1;
       
       <tr>
        <td>DIRECCION&nbsp;<span class="red"> (*) </span></td>
-        <td colspan="3"><textarea class="textarea1" name="direccion" cols="40" rows="1"></textarea></td>
+        <td colspan="2">&nbsp;&nbsp;<textarea class="textarea1" name="direccion" cols="40" rows="1"></textarea></td>
       </tr>      
 
       <tr>
@@ -128,3 +127,4 @@ $uno = htmlentities($filasn[0]) + 1;
 <div style="clear:both"></div>
 
 
+</article>
