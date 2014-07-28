@@ -125,6 +125,7 @@
 
         <li><a href="#" onClick="mostrar_contenido(1); return false;">Empresa</a></li>      	
       	<li><a href="#" onClick="mostrar_contenido(2); return false;">Proyecto</a></li>
+        <li><a href="#" onClick="mostrar_contenido(3); return false;">Inventario Productos</a></li>        
             <li>
               <a href="#">Generales</a>
               <ul>

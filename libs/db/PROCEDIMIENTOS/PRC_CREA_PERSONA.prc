@@ -1,4 +1,4 @@
-CREATE OR REPLACE PROCEDURE PRE.prc_crea_persona (
+CREATE OR REPLACE PROCEDURE PROYFINAL.prc_crea_persona (
    p_id_prsona     IN       VARCHAR2,
    p_nombre        IN       VARCHAR2,
    p_apellido      IN       VARCHAR2,

@@ -12,7 +12,7 @@ $.ajax({
 	beforeSend: function(){ $("#formulariogenerico").html("Cargando el formulario..."); },
 	//success: function(response){ $("#formulariogenerico").html(response); },
 	//.val()
-    success: function(response){ $("#formulariogenerico").html(response); },    
+    success: function(response){ $("#formulariogenerico").html(response); },
     error: function() { $("#formulariogenerico").html("Parece que tenemos clavo."); }
 });
 

@@ -1,0 +1,20 @@
+Pasos:
+
+- Agregar al Menu.
+- Agregar a la funcion mostrar_contenido(ID)
+
+Esta en Js/funcionesjq.js
+
+- libs/cargarformularios
+>> crear archivo .php en la raiz
+   En este archivo vamos a crear un dos Js
+    js/f_nombres.js
+    js/lista_nombres.js
+
+f_nombres.js  lleva:
+- lisbs/listarNombres.php
+  aqui tambien incluir el js: lista_nombres.js
+
+Lista_nombres: solo contiene el ID en el html para reflescar
+la información.
+

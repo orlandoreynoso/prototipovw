@@ -1,4 +1,4 @@
-CREATE OR REPLACE procedure PRE.PRC_CREA_PUESTO(P_DESC    IN VARCHAR2,
+CREATE OR REPLACE procedure PROYFINAL.PRC_CREA_PUESTO(P_DESC    IN VARCHAR2,
                                               P_CORR    OUT VARCHAR2,
                                               P_COD_MSG OUT VARCHAR2,
                                               P_DES_MSG OUT VARCHAR2) is

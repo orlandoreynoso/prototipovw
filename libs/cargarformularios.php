@@ -18,8 +18,8 @@ switch($codigo_x){
 	break;
 
 
-	case 100:
-	include('../ingreso-persona.php');
+	case 3:
+	include('../reporte-productos.php');
 	break;
 
 
