@@ -8,7 +8,7 @@ $valido = true;
 
       if(isset($_POST['entrar'])){
 
-         include('librerias/conexion-clase.php');
+         include('libs/conexion-clase.php');
 
   
     $nombre=$_POST['usuario'];
