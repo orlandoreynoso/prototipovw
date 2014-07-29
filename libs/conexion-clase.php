@@ -9,7 +9,7 @@
 			   exit;
 			}
 			else {
-			   echo "Conexión con éxito a Oracle!";
+			   echo "<p class='exito'>Conexión con éxito a Oracle!</p>";
 			  //  $this->con = $conect;
 			} 
 

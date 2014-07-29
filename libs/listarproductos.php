@@ -44,12 +44,6 @@ oci_execute($stid);
                     <?php
 
                       while (($row = oci_fetch_object($stid)) != false) {
-                          // Use nombres de atributo en mayúsculas para cada columna estándar de Oracle
-/* $sql_productos = "SELECT COD_EMPRESA,COD_PROYECTO,COD_BODEGA,CANTIDAD_MINIMA,CANTIDAD_MAXIMA,CANTIDAD_ACTUAL,
-FECHA_MOVIMIENTO,PRODUCTO.ESTADO_PRODUCTO AS ESTADO,ID_PRODUCTO,DES_PRODUCTO,PRECIO_PRODUCTO
-FROM 
-DETALLE_BODEGA,PRODUCTO
-WHERE DETALLE_BODEGA.COD_PRODUCTO = PRODUCTO.COD_PRODUCTO";  */
 
                         echo '<tr>
                               <td>'.$row->COD_EMPRESA.'</td>
@@ -74,5 +68,4 @@ oci_free_statement($stid);
 oci_close($conn);
 
 
-echo '-------------------------------------------------------------------';
 ?>

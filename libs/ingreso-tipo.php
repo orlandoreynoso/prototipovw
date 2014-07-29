@@ -1,25 +1,14 @@
 
 <article class="confirmando_info">
   
-<h1>Ingresar Persona</h1>
+<h1>Ingresar tipo ID</h1>
 
-
-<?php /*
-
-require('./libhe/conexion.php'); 
-	   
- $Resultado=mysql_query("SELECT COUNT(idconfirmacion) as numeral FROM cop_confirmacion ORDER BY numeral",$con);	   
- $MostrarDato=mysql_fetch_array($Resultado);
- $uno = htmlentities($MostrarDato[0]) + 1;
- */
-
-?>
 
 <?php
 
 include('../libs/conexion-clase.php');
 
-$empresas = "SELECT * FROM PERSONA";
+$empresas = "SELECT * FROM TIPO_ID";
 
 
  $result = oci_parse($conn, $empresas);
@@ -35,10 +24,10 @@ $uno = htmlentities($filasn) + 1;
 
 <script language="JavaScript" type="text/javascript" src="funcionesjq.js"></script>
 
-<h5 class="escribiendo">Agregar nueva persona&nbsp;&nbsp;&raquo;&nbsp;<span class="numeral">No. <?php echo $uno; ?></span></h5>
+<h5 class="escribiendo">Agregar nuevo tipo&nbsp;&nbsp;&raquo;&nbsp;<span class="numeral">No. <?php echo $uno; ?></span></h5>
 <!-- form class="contact_form formulario"  name="formu_confi" method="post" action="libs/guardar-persona.php"  -->
 <!-- form class="contact_form formulario"  name="formu_confi" method="post" -->
-<form name="nuevo_empleado" action="" onsubmit="guardar_persona(); return false">
+<form name="nuevo_dato" action="" onsubmit="guardar_tipo(); return false">
 		
 <div id="informacion_nuevo_cliente">
 <div style="clear:both;"></div>
@@ -48,15 +37,13 @@ $uno = htmlentities($filasn) + 1;
 <table class="tabla01">
     <tr>
       <td>&nbsp;</td>      
-      <td><input name="cod_persona" type="text" size="28" required="required" value="" placeholder ="CODIGO PERSONA"/></td>
+      <td><input name="cod_tipo" type="text" size="28" required="required" value="" placeholder ="CODIGO TIPO"/></td>
     </tr>
     <tr>
-      <td>&nbsp;</td>            
-      <td>
-        <input name="nombres" type="text" size="28" autofocus="autofocus" required="required" placeholder ="NOMBRES"/>
-        <input name="apellidos" type="text" size="28" required="required" placeholder ="APELLIDOS"/>
-      </td>      
-    </tr>
+      <td>&nbsp;</td>      
+      <td><input name="des_id" type="text" size="28" required="required" value="" placeholder ="DESCRIPCION TIPO"/></td>
+    </tr>    
+
     <tr>
       <td>Fecha Ingreso</td>            
         <td>  
@@ -90,19 +77,16 @@ $uno = htmlentities($filasn) + 1;
       ?>
             </select>
       </td>
-    </tr>    
+    </tr> 
     <tr>
       <td></td>
       <td><input name="estado" type="text" size="28" placeholder="ESTADO"/></td>
     </tr>
-    <tr>
-      <td></td>
-      <td><textarea class="textarea1" name="direccion" cols="40" rows="1" placeholder="DIRECCION"></textarea></td>
-    </tr>
+
 
      <tr>
       <td></td>
-      <td><input name="ingreso" maxlength="60" size="30" value="nueva_persona" type="hidden" class="text" ></td>
+      <td><input name="ingreso" maxlength="60" size="30" value="nuevo_tipo" type="hidden" class="text" ></td>
      </tr>
 
 	<tr>

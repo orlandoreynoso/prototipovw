@@ -22,10 +22,21 @@ switch($codigo_x){
 	include('../reporte-productos.php');
 	break;
 
+	case 4:
+	include('../libs/reporte-personas.php');
+	break;
 
 	case 100:
 	include('../libs/ingreso-persona.php');
 	break;
+
+	case 101:
+	include('../libs/ingreso-puesto.php');
+	break;
+
+	case 102:
+	include('../libs/ingreso-tipo.php');
+	break;	
 
 	default :
 	echo ' <h3>Seleccione una opcion GUARDAR</h3>';

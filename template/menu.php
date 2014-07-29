@@ -4,7 +4,9 @@
    <li><a href="#">Ingreso de Datos</a>
 
       <ul>
-                   <li><a href="#" onClick="mostrar_contenido(100); return false;">Persona</a></li>
+            <li><a onClick="mostrar_contenido(100); return false;">Persona</a></li>
+            <li><a onClick="mostrar_contenido(101); return false;">Puesto</a></li>
+            <li><a onClick="mostrar_contenido(102); return false;">Tipo ID</a></li>            
             <li>
               <a href="#">dos</a>
               <ul>
@@ -125,7 +127,8 @@
 
         <li><a href="#" onClick="mostrar_contenido(1); return false;">Empresa</a></li>      	
       	<li><a href="#" onClick="mostrar_contenido(2); return false;">Proyecto</a></li>
-        <li><a href="#" onClick="mostrar_contenido(3); return false;">Inventario Productos</a></li>        
+        <li><a href="#" onClick="mostrar_contenido(3); return false;">Inventario Productos</a></li>
+        <li><a href="#" onClick="mostrar_contenido(4); return false;">Personas</a></li>             
             <li>
               <a href="#">Generales</a>
               <ul>
