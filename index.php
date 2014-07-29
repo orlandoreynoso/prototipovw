@@ -94,8 +94,8 @@ echo '</table>';
     <div id="contenido_form">
     <div>
         <form action="index.php" method="post">
-            <input id="usuario"  name="usuario" type="text" placeholder="usuario" class="icon-usuario" ><br>
-            <input id="contra" name="contra" type="password" placeholder="password" class="icon-clave"><br>
+            <input id="usuario"  name="usuario" type="text" placeholder="usuario" class="icon-usuario" autofocus="autofocus" ><br>
+            <input id="contra" name="contra" type="password" placeholder="password" class="icon-clave" autofocus="autofocus" ><br>
             <input name="entrar" type="submit" value="ENTRAR">
             <?php if ($valido==false) {
                 echo '<p>Datos incorrectos <br/><a href="index.php">Intente de nuevo</a></p>';

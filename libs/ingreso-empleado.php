@@ -35,7 +35,7 @@ $max01[0];
     <tr>
         <td>PERSONA</td>            
         <td>  
-            <select name="id_persona"  class="seleccion"  placeholder="select your beverage" >
+            <select name="id_persona"  class="seleccion">
             <option selected="selected" value="">[PERSONA]</option>
             <?php 
 
@@ -111,7 +111,7 @@ oci_free_statement($consulta03);
 
     <tr>       <td>TIPO ID</td>            
         <td>  
-            <select name="id_puesto"  class="seleccion" >
+            <select name="cod_id"  class="seleccion" >
             <option selected="selected" value="">[TIPO ID]</option>
             <?php 
 

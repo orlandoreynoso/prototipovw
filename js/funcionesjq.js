@@ -192,7 +192,7 @@ function guardar_empleado(){
   id_puesto=document.nuevo_dato.id_puesto.value;
   salario_base=document.nuevo_dato.salario_base.value;
   bonificacion=document.nuevo_dato.bonificacion.value;
-  id_puesto=document.nuevo_dato.id_puesto.value;  
+  cod_id=document.nuevo_dato.cod_id.value;  
   ingreso=document.nuevo_dato.ingreso.value;   
 
 //var parametros  = { "valor_neto1" : valor1, "valor_neto2" : valor2 };
@@ -204,7 +204,7 @@ var parametros  = {
   "id_puesto" : id_puesto,
   "salario_base" : salario_base,
    "bonificacion" : bonificacion, 
-  "id_puesto" : id_puesto,  
+  "cod_id" : cod_id,  
   "ingreso" : ingreso
 };
 
@@ -231,7 +231,136 @@ function LimpiarCampos(){
   id_puesto=document.nuevo_dato.id_puesto.value= "";
   salario_base=document.nuevo_dato.salario_base.value= "";
   bonificacion=document.nuevo_dato.bonificacion.value= "";
-  id_puesto=document.nuevo_dato.id_puesto.value= "";  
+  cod_id=document.nuevo_dato.cod_id.value= "";  
+  ingreso=document.nuevo_dato.ingreso.value= "";  
+}
+
+}
+
+
+/*=============== GUARDAR NUEVA BODEGA ======================*/
+function guardar_bodega(){
+
+ divResultado = document.getElementById('informacion_nuevo_cliente');
+
+  //recogemos los valores de los inputs
+
+  id_bodega=document.nuevo_dato.id_bodega.value;
+  id_empresa=document.nuevo_dato.id_empresa.value;  
+  id_proyecto=document.nuevo_dato.id_proyecto.value;    
+  nom_bodega=document.nuevo_dato.nom_bodega.value;
+  direccion=document.nuevo_dato.direccion.value;
+  dia_in=document.nuevo_dato.dia_in.value;
+  mes_in=document.nuevo_dato.mes_in.value;
+  anio_in=document.nuevo_dato.anio_in.value;
+  estado=document.nuevo_dato.estado.value;
+  ingreso=document.nuevo_dato.ingreso.value;   
+
+//var parametros  = { "valor_neto1" : valor1, "valor_neto2" : valor2 };
+var parametros  = { 
+  "id_bodega" : id_bodega,
+  "id_empresa" : id_empresa,  
+  "id_proyecto" : id_proyecto,    
+  "nom_bodega" : nom_bodega, 
+  "direccion" : direccion, 
+  "dia_in" : dia_in, 
+  "mes_in" : mes_in, 
+  "anio_in" : anio_in,
+  "estado" : estado,
+  "ingreso" : ingreso
+};
+
+$.ajax({
+  data: parametros,
+  url: 'libs/guardar-bodega.php',
+  type: 'post',
+  async: true,
+  beforeSend: function(){ $("#formulariogenerico").html("Guardando el formulario..."); },
+  //success: function(response){ $("#formulariogenerico").html(response); },
+  //.val()
+    success: function(response){ $("#formulariogenerico").html(response); },
+    error: function() { $("#formulariogenerico").html("Parece que tenemos clavo."); }
+    //  LimpiarCampos();
+});
+
+
+//función para limpiar los campos
+function LimpiarCampos(){
+  id_bodega=document.nuevo_dato.id_bodega.value= "";
+  id_empresa=document.nuevo_dato.id_empresa.value= "";  
+  id_proyecto=document.nuevo_dato.id_proyecto.value= "";    
+  nom_bodega=document.nuevo_dato.nom_bodega.value= "";
+  direccion=document.nuevo_dato.direccion.value= "";
+  dia_in=document.nuevo_dato.dia_in.value="";
+  mes_in=document.nuevo_dato.mes_in.value="";
+  anio_in=document.nuevo_dato.anio_in.value="";
+  estado=document.nuevo_dato.estado.value= "";
+  ingreso=document.nuevo_dato.ingreso.value= "";  
+}
+
+}
+
+/*======= MOVIMIENTO BODEGA ========================*/
+
+function guarda_movimiento_bodega(){
+
+ divResultado = document.getElementById('informacion_nuevo_cliente');
+
+  //recogemos los valores de los inputs
+
+  id_mbodega=document.nuevo_dato.id_mbodega.value;  
+  id_bodega=document.nuevo_dato.id_bodega.value;  
+  dia_in=document.nuevo_dato.dia_in.value;
+  mes_in=document.nuevo_dato.mes_in.value;
+  anio_in=document.nuevo_dato.anio_in.value;
+  usuario=document.nuevo_dato.usuario.value;
+  tipo_movimiento=document.nuevo_dato.tipo_movimiento.value;  
+  usuario_movimiento=document.nuevo_dato.usuario_movimiento.value;
+  estado=document.nuevo_dato.estado.value;
+  tipo_operacion=document.nuevo_dato.tipo_operacion.value;  
+  ingreso=document.nuevo_dato.ingreso.value;   
+
+//var parametros  = { "valor_neto1" : valor1, "valor_neto2" : valor2 };
+var parametros  = { 
+  "id_mbodega" : id_mbodega,    
+  "id_bodega" : id_bodega,  
+  "dia_in" : dia_in, 
+  "mes_in" : mes_in, 
+  "anio_in" : anio_in,
+  "usuario" : usuario, 
+  "tipo_movimiento" : tipo_movimiento,   
+  "usuario_movimiento" : usuario_movimiento,   
+  "estado" : estado,
+  "tipo_operacion" : tipo_operacion,  
+  "ingreso" : ingreso
+};
+
+$.ajax({
+  data: parametros,
+  url: 'libs/guardar-movimiento-bodega.php',
+  type: 'post',
+  async: true,
+  beforeSend: function(){ $("#formulariogenerico").html("Guardando el formulario..."); },
+  //success: function(response){ $("#formulariogenerico").html(response); },
+  //.val()
+    success: function(response){ $("#formulariogenerico").html(response); },
+    error: function() { $("#formulariogenerico").html("Parece que tenemos un error, revisa."); }
+    //  LimpiarCampos();
+});
+
+
+//función para limpiar los campos
+function LimpiarCampos(){
+  id_mbodega=document.nuevo_dato.id_mbodega.value= "";
+  id_bodega=document.nuevo_dato.id_bodega.value= "";  
+  dia_in=document.nuevo_dato.dia_in.value="";
+  mes_in=document.nuevo_dato.mes_in.value="";
+  anio_in=document.nuevo_dato.anio_in.value="";
+  usuario=document.nuevo_dato.usuario.value= "";
+  tipo_movimiento=document.nuevo_dato.tipo_movimiento.value= "";  
+  usuario_movimiento=document.nuevo_dato.usuario_movimiento.value= "";  
+  estado=document.nuevo_dato.estado.value= "";
+  tipo_operacion=document.nuevo_dato.tipo_operacion.value= "";  
   ingreso=document.nuevo_dato.ingreso.value= "";  
 }
 

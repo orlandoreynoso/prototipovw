@@ -4,57 +4,54 @@ include('../libs/conexion-clase.php');
 
 $vars = $_POST;
 
-echo 'Recibiendo datos de tipo.';
-
-
 if ($vars['ingreso'] == 'nuevo_empleado') {
 
-  echo '<p>Ingreso a guardar</p>';
-
-echo $consulta  = "INSERT INTO EMPLEADO (COD_PERSONA,USUARIO,CLAVE,ESTADO,COD_PUESTO,SALARIO_BASE,BONIFICACION,COD_ID_DEFAULT) VALUES(:v01_bv, :v02_bv,:v03_bv, :v04_bv, :v05_bv, :v06_bv, :v07_bv, :v08_bv)";
-
-$stid = oci_parse($conn,$consulta);
-
-echo $v01 = $vars['id_persona'];
-echo $v02 = $vars['usuario'];
+$v01 = $vars['id_persona'];
+$v02 = $vars['usuario'];
 $v03 = $vars['clave'];
 $v04 = $vars['estado'];
-echo '<p>----</p>';
-echo $v05 = $vars['id_puesto'];
-echo '<p>...</p>';
+$v05 = $vars['id_puesto'];
 $v06 = $vars['salario_base'];
 $v07 = $vars['bonificacion'];
-$v08 = $vars['id_puesto'];
+$v08 = $vars['cod_id'];
 
 
-oci_bind_by_name($stid, ":v01_bv", $v01);
-oci_bind_by_name($stid, ":v02_bv", $v02);
-oci_bind_by_name($stid, ":v03_bv", $v03);
-oci_bind_by_name($stid, ":v04_bv", $v04);
-oci_bind_by_name($stid, ":v05_bv", $v05);
-oci_bind_by_name($stid, ":v06_bv", $v06);
-oci_bind_by_name($stid, ":v07_bv", $v07);
-oci_bind_by_name($stid, ":v08_bv", $v08);
 
-    oci_execute($stid, OCI_DEFAULT);
+$sql01 = "SELECT PERSONA.COD_PERSONA,PERSONA.NOMBRES,EMPLEADO.COD_PERSONA 
+FROM PERSONA,EMPLEADO 
+WHERE PERSONA.COD_PERSONA = EMPLEADO.COD_PERSONA 
+AND  EMPLEADO.COD_PERSONA = ".$v01."";
 
-    
-    // Inicia transaccion
-    $committed = oci_commit($conn);
+$consulta01 = oci_parse($conn, $sql01);
+         oci_execute($consulta01);    
 
-    if (!$committed) {
-        $error = oci_error($conn);
-        echo 'Commit failed. Oracle reports: ' . $error['message'];
-    }
-    else{
-      echo '<p class="exito">Empleado agregado satisfactoriamente.</p>';
-    }
 
+$max01 = oci_fetch_row($consulta01);
+$max01[0];
+
+
+if($max01[0] == $v01){
+
+  echo '<p class="error">Erro al intentar crear al Empleado, ya está asignado a '.$max01[1].'</p>';
 }
 
 else{
-   echo '<p class="error">Ocurrio un error al intentar recuperar los datos.</p>';
+
+    $consulta  = "INSERT INTO EMPLEADO (COD_PERSONA,USUARIO,CLAVE,ESTADO,COD_PUESTO,SALARIO_BASE,BONIFICACION,COD_ID_DEFAULT)  
+    VALUES($v01,'".$v02."','".$v03."','".$v04."',$v05,$v06,$v07,$v08)";
+
+      $stid = oci_parse($conn,$consulta);
+
+      oci_execute($stid, OCI_DEFAULT);
+   
+      // Inicia transaccion
+      $committed = oci_commit($conn);
+  
 }
+
+}
+
+else{    echo '<p class="error">Ocurrio un error al intentar recuperar los datos.</p>';  }
 
 	
 ?>

@@ -42,6 +42,15 @@ switch($codigo_x){
 	include('../libs/ingreso-empleado.php');
 	break;		
 
+	/*==== Bodegas ===============*/
+	case 201:
+	include('../libs/ingreso-bodega.php');
+	break;
+
+	case 203:
+	include('../libs/ingreso-movimiento-bodega.php');
+	break;	
+
 	default :
 	echo ' <h3>Seleccione una opcion GUARDAR</h3>';
 	break;
