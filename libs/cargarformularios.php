@@ -38,6 +38,10 @@ switch($codigo_x){
 	include('../libs/ingreso-tipo.php');
 	break;	
 
+	case 103:
+	include('../libs/ingreso-empleado.php');
+	break;		
+
 	default :
 	echo ' <h3>Seleccione una opcion GUARDAR</h3>';
 	break;

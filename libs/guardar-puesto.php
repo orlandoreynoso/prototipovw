@@ -11,9 +11,9 @@ if ($vars['ingreso'] == 'nuevo_puesto') {
 
   echo '<p>Ingreso a guardar</p>';
 
+$consulta = "INSERT INTO PUESTO (COD_PUESTO, DES_PUESTO,ESTADO) VALUES(:v01_bv, :v02_bv,:v03_bv)";
 
-$stid = oci_parse($conn,"INSERT INTO PUESTO (COD_PUESTO, DES_PUESTO,ESTADO) 
-  VALUES(:v01_bv, :v02_bv,:v03_bv)");
+$stid = oci_parse($conn,$consulta);
 
 $v01 = $vars['cod_puesto'];
 $v02 = $vars['descripcion'];

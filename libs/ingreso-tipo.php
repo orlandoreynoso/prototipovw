@@ -18,15 +18,23 @@ $empresas = "SELECT * FROM TIPO_ID";
 $filasn = oci_fetch_all($result,$results,0, -1, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
 $filasn;
 
-$uno = htmlentities($filasn) + 1;
+$uno = htmlentities($filasn) + 10;
+
+/*====== ID MAXIMO DE TIPO =============*/
+
+$sql01 = "SELECT MAX(COD_ID + 1) AS COD_TIPO FROM TIPO_ID";
+$consulta01 = oci_parse($conn, $sql01);
+         oci_execute($consulta01);    
+
+
+$max01 = oci_fetch_row($consulta01);
+$max01[0];
+
 ?>
 
 
 <script language="JavaScript" type="text/javascript" src="funcionesjq.js"></script>
 
-<h5 class="escribiendo">Agregar nuevo tipo&nbsp;&nbsp;&raquo;&nbsp;<span class="numeral">No. <?php echo $uno; ?></span></h5>
-<!-- form class="contact_form formulario"  name="formu_confi" method="post" action="libs/guardar-persona.php"  -->
-<!-- form class="contact_form formulario"  name="formu_confi" method="post" -->
 <form name="nuevo_dato" action="" onsubmit="guardar_tipo(); return false">
 		
 <div id="informacion_nuevo_cliente">
@@ -36,12 +44,12 @@ $uno = htmlentities($filasn) + 1;
 
 <table class="tabla01">
     <tr>
-      <td>&nbsp;</td>      
-      <td><input name="cod_tipo" type="text" size="28" required="required" value="" placeholder ="CODIGO TIPO"/></td>
+      <td>COD ID TIPO</td>      
+      <td><input name="cod_tipo" type="text" size="28" required="required" value="<?php echo $max01[0]; ?>" placeholder ="CODIGO TIPO"/></td>
     </tr>
     <tr>
-      <td>&nbsp;</td>      
-      <td><input name="des_id" type="text" size="28" required="required" value="" placeholder ="DESCRIPCION TIPO"/></td>
+      <td>DESCRIPCION</td>      
+      <td><input name="des_id" type="text" size="28" required="required" autofocus="autofocus" value="" placeholder ="DESCRIPCION TIPO"/></td>
     </tr>    
 
     <tr>

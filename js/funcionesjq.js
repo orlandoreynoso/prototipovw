@@ -168,11 +168,71 @@ $.ajax({
 //función para limpiar los campos
 function LimpiarCampos(){
   cod_tipo=document.nuevo_dato.cod_tipo.value="";
-  des_id=document.nuevo_dato.des_id.value;    
-  dia_in=document.nuevo_dato.dia_in.value="";
-  mes_in=document.nuevo_dato.mes_in.value="";
+  usuario=document.nuevo_dato.usuario.value;    
+  clave=document.nuevo_dato.clave.value="";
+  estado=document.nuevo_dato.estado.value="";
   anio_in=document.nuevo_dato.anio_in.value="";
   estado=document.nuevo_dato.estado.value="";
+}
+
+}
+
+
+/*============= GUARDAR NUEVO EMPLEADO ==========================*/
+
+function guardar_empleado(){
+
+ divResultado = document.getElementById('informacion_nuevo_cliente');
+
+  //recogemos los valores de los inputs
+  id_persona=document.nuevo_dato.id_persona.value;
+  usuario=document.nuevo_dato.usuario.value;  
+  clave=document.nuevo_dato.clave.value;
+  estado=document.nuevo_dato.estado.value;
+  id_puesto=document.nuevo_dato.id_puesto.value;
+  salario_base=document.nuevo_dato.salario_base.value;
+  bonificacion=document.nuevo_dato.bonificacion.value;
+  id_puesto=document.nuevo_dato.id_puesto.value;  
+  ingreso=document.nuevo_dato.ingreso.value;   
+
+//var parametros  = { "valor_neto1" : valor1, "valor_neto2" : valor2 };
+var parametros  = { 
+  "id_persona" : id_persona,
+  "usuario" : usuario,  
+  "clave" : clave, 
+  "estado" : estado, 
+  "id_puesto" : id_puesto,
+  "salario_base" : salario_base,
+   "bonificacion" : bonificacion, 
+  "id_puesto" : id_puesto,  
+  "ingreso" : ingreso
+};
+
+$.ajax({
+  data: parametros,
+  url: 'libs/guardar-empleado.php',
+  type: 'post',
+  async: true,
+  beforeSend: function(){ $("#formulariogenerico").html("Guardando el formulario..."); },
+  //success: function(response){ $("#formulariogenerico").html(response); },
+  //.val()
+    success: function(response){ $("#formulariogenerico").html(response); },
+    error: function() { $("#formulariogenerico").html("Parece que tenemos clavo."); }
+    //  LimpiarCampos();
+});
+
+
+//función para limpiar los campos
+function LimpiarCampos(){
+  id_persona=document.nuevo_dato.id_persona.value= "";
+  usuario=document.nuevo_dato.usuario.value= "";  
+  clave=document.nuevo_dato.clave.value= "";
+  estado=document.nuevo_dato.estado.value= "";
+  id_puesto=document.nuevo_dato.id_puesto.value= "";
+  salario_base=document.nuevo_dato.salario_base.value= "";
+  bonificacion=document.nuevo_dato.bonificacion.value= "";
+  id_puesto=document.nuevo_dato.id_puesto.value= "";  
+  ingreso=document.nuevo_dato.ingreso.value= "";  
 }
 
 }

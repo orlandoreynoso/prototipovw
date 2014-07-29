@@ -1,8 +1,6 @@
 <?php  include('cabecera.php');   ?>
 
-<nav>
-  <?php  include('template/menu.php');   ?>
-</nav>
+<nav><?php  include('menu.php');   ?></nav>
 
 <section id="formulariogenerico"></section>
 

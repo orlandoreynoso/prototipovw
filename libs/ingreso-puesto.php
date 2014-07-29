@@ -19,14 +19,22 @@ $filasn = oci_fetch_all($result,$results,0, -1, OCI_FETCHSTATEMENT_BY_ROW + OCI_
 $filasn;
 
 $uno = htmlentities($filasn) + 1;
+
+/*====== ID MAXIMO DE PUESTO =============*/
+
+$sql_maxi_puesto = "SELECT MAX(COD_PUESTO + 1) AS ID_PUESTO FROM PUESTO";
+$consulta_max_puesto = oci_parse($conn, $sql_maxi_puesto);
+         oci_execute($consulta_max_puesto);    
+
+
+$max_puesto = oci_fetch_row($consulta_max_puesto);
+$max_puesto[0];
+
 ?>
 
 
 <script language="JavaScript" type="text/javascript" src="funcionesjq.js"></script>
 
-<h5 class="escribiendo">Agregar nuevo puesto&nbsp;&nbsp;&raquo;&nbsp;<span class="numeral">No. <?php echo $uno; ?></span></h5>
-<!-- form class="contact_form formulario"  name="formu_confi" method="post" action="libs/guardar-persona.php"  -->
-<!-- form class="contact_form formulario"  name="formu_confi" method="post" -->
 <form name="nuevo_dato" action="" onsubmit="guardar_puesto(); return false">
 		
 <div id="informacion_nuevo_cliente">
@@ -36,13 +44,13 @@ $uno = htmlentities($filasn) + 1;
 
 <table class="tabla01">
     <tr>
-      <td>&nbsp;</td>      
-      <td><input name="cod_puesto" type="text" size="28" required="required" value="" placeholder ="CODIGO PUESTO"/></td>
+      <td>CODIGO PUESTO: </td>      
+      <td><input name="cod_puesto" type="text" size="28" required="required" value="<?php echo $max_puesto[0]; ?>" placeholder ="CODIGO PUESTO"/></td>
     </tr>
 
     <tr>
       <td></td>
-      <td><textarea name="descripcion" cols="40" rows="1" placeholder="DESCRIPCION"></textarea></td>
+      <td><input name="descripcion"  placeholder="DESCRIPCION" size="28" autofocus="autofocus" required="required" /></td>
     </tr>
     <tr>
       <td></td>

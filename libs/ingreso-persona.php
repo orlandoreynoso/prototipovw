@@ -4,17 +4,6 @@
 <h1>Ingresar Persona</h1>
 
 
-<?php /*
-
-require('./libhe/conexion.php'); 
-	   
- $Resultado=mysql_query("SELECT COUNT(idconfirmacion) as numeral FROM cop_confirmacion ORDER BY numeral",$con);	   
- $MostrarDato=mysql_fetch_array($Resultado);
- $uno = htmlentities($MostrarDato[0]) + 1;
- */
-
-?>
-
 <?php
 
 include('../libs/conexion-clase.php');
@@ -30,14 +19,23 @@ $filasn = oci_fetch_all($result,$results,0, -1, OCI_FETCHSTATEMENT_BY_ROW + OCI_
 $filasn;
 
 $uno = htmlentities($filasn) + 1;
+
+/*====== ID MAXIMO DE PERSONA =============*/
+
+$sql_maxi_persona = "SELECT MAX(COD_PERSONA + 1) AS ID_PERSONA FROM PERSONA";
+$consulta_max_persona = oci_parse($conn, $sql_maxi_persona);
+         oci_execute($consulta_max_persona);    
+
+
+$max_persona = oci_fetch_row($consulta_max_persona);
+$max_persona[0];
+
+
 ?>
 
 
 <script language="JavaScript" type="text/javascript" src="funcionesjq.js"></script>
 
-<h5 class="escribiendo">Agregar nueva persona&nbsp;&nbsp;&raquo;&nbsp;<span class="numeral">No. <?php echo $uno; ?></span></h5>
-<!-- form class="contact_form formulario"  name="formu_confi" method="post" action="libs/guardar-persona.php"  -->
-<!-- form class="contact_form formulario"  name="formu_confi" method="post" -->
 <form name="nuevo_empleado" action="" onsubmit="guardar_persona(); return false">
 		
 <div id="informacion_nuevo_cliente">
@@ -47,8 +45,8 @@ $uno = htmlentities($filasn) + 1;
 
 <table class="tabla01">
     <tr>
-      <td>&nbsp;</td>      
-      <td><input name="cod_persona" type="text" size="28" required="required" value="" placeholder ="CODIGO PERSONA"/></td>
+      <td>ID PERSONA: </td>      
+      <td><input name="cod_persona" type="text" size="28" required="required" value="<?php echo $max_persona[0]; ?>" placeholder ="CODIGO PERSONA"/></td>
     </tr>
     <tr>
       <td>&nbsp;</td>            

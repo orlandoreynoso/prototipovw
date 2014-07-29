@@ -96,11 +96,17 @@ section{
 	background: #eeeeee;
 	width: 100%;
 	border-radius: 5px;
-	margin: 0 0 0 0;
+	margin: 0 0 0 40px;
 	padding:  20px 0 0 10px;
 	color: #084b95;
 }
 
+
+.confirmando_info h1{
+	font-size: 16px;
+	margin: 0 0 5px 40px;
+	padding: 0 0 0 0;
+} 
 
 .cuadro{
 	float: left;
@@ -216,10 +222,10 @@ border: 1px solid #888;
 /*	border: 1px solid #232222;*/
 	margin: 2px 0 0 0;
 	padding:3px; 
-	border-radius: 5px;
+	border-radius: 5px;  /*
 	box-shadow: rgba(0,0,0,0.5) 5px 5px 20px;
 	font-style: italic;
-	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
+	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;  */
 }
 
 

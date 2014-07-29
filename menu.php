@@ -4,9 +4,10 @@
    <li><a href="#">Ingreso de Datos</a>
 
       <ul>
-            <li><a onClick="mostrar_contenido(100); return false;">Persona</a></li>
-            <li><a onClick="mostrar_contenido(101); return false;">Puesto</a></li>
-            <li><a onClick="mostrar_contenido(102); return false;">Tipo ID</a></li>            
+            <li><a  href="#" onClick="mostrar_contenido(100); return false;">Persona</a></li>
+            <li><a  href="#" onClick="mostrar_contenido(101); return false;">Puesto</a></li>
+            <li><a  href="#" onClick="mostrar_contenido(102); return false;">Tipo ID</a></li>
+            <li><a  href="#" onClick="mostrar_contenido(103); return false;">Empleado</a></li>                       
             <li>
               <a href="#">dos</a>
               <ul>
