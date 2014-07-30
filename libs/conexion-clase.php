@@ -1,7 +1,7 @@
 
 <?php
 
-		$conn = oci_pconnect('PROYFINAL','PROYFINAL', 'localhost/XE');
+		$conn = oci_pconnect('PRE','PRE', 'localhost/XE');
 
 			if (!$conn) {
 			   $m = oci_error();

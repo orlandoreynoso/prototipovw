@@ -42,7 +42,7 @@ $max01[0];
 
 /*====== ID MAXIMO DE TIPO =============*/
 
-$sql02 = "SELECT COD_PERSONA,NOMBRES FROM PERSONA WHERE ESTADO = '1'";
+$sql02 = "SELECT COD_PERSONA,NOMBRES FROM PERSONA WHERE ESTADO = 'A'";
 $consulta02 = oci_parse($conn, $sql02);
          oci_execute($consulta02);    
 
@@ -84,7 +84,7 @@ oci_free_statement($consulta02);
 
 /*====== ID MAXIMO DE TIPO =============*/
 
-$sql03 = "SELECT COD_PUESTO,DES_PUESTO FROM PUESTO WHERE ESTADO = '1'";
+$sql03 = "SELECT COD_PUESTO,DES_PUESTO FROM PUESTO WHERE ESTADO = 'A'";
 $consulta03 = oci_parse($conn, $sql03);
          oci_execute($consulta03);    
 
@@ -118,7 +118,7 @@ oci_free_statement($consulta03);
 
 /*====== ID MAXIMO DE TIPO_ID =============*/
 
-$sql04 = "SELECT COD_ID, DES_ID FROM TIPO_ID WHERE ESTADO_ID = '1'";
+$sql04 = "SELECT COD_ID, DES_ID FROM TIPO_ID WHERE ESTADO_ID = 'A'";
 $consulta04 = oci_parse($conn, $sql04);
          oci_execute($consulta04);    
 

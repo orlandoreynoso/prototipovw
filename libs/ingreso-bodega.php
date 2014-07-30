@@ -47,7 +47,7 @@ $max01[0];
 
 /*====== ID MAXIMO DE TIPO =============*/
 
-$sql02 = "SELECT COD_EMPRESA,NOM_EMPRESA FROM EMPRESA WHERE ESTADO = '1'";
+$sql02 = "SELECT COD_EMPRESA,NOM_EMPRESA FROM EMPRESA WHERE ESTADO = 'A'";
 $consulta02 = oci_parse($conn, $sql02);
          oci_execute($consulta02);    
 
@@ -75,7 +75,7 @@ oci_free_statement($consulta02);
 
 /*====== ID MAXIMO DE TIPO =============*/
 
-$sql03 = "SELECT COD_EMPRESA,COD_PROYECTO,NOM_PROYECTO FROM PROYECTO WHERE ESTADO = '1'";
+$sql03 = "SELECT COD_EMPRESA,COD_PROYECTO,NOM_PROYECTO FROM PROYECTO WHERE ESTADO = 'A'";
 $consulta03 = oci_parse($conn, $sql03);
          oci_execute($consulta03);    
 

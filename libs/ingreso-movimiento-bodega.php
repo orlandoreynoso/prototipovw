@@ -56,7 +56,7 @@ $max01[0];
             <?php 
 
 
-echo $sql04 = "SELECT COD_EMPRESA,COD_PROYECTO,COD_BODEGA,DESC_BODEGA FROM BODEGA WHERE ESTADO_BODEGA = '1'";
+echo $sql04 = "SELECT COD_EMPRESA,COD_PROYECTO,COD_BODEGA,DESC_BODEGA FROM BODEGA WHERE ESTADO_BODEGA = 'A'";
 $consulta04 = oci_parse($conn, $sql04);
          oci_execute($consulta04);    
 

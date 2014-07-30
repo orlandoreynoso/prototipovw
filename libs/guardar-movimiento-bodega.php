@@ -21,7 +21,7 @@ $v11 = $vars['usuario_movimiento'];
 $v12 = $vars['estado'];
 $v13 = $vars['tipo_operacion'];
 
-$sql03 = "SELECT COD_EMPRESA,COD_PROYECTO,COD_BODEGA,DESC_BODEGA FROM BODEGA WHERE ESTADO_BODEGA = '1' AND COD_BODEGA= $v03";
+$sql03 = "SELECT COD_EMPRESA,COD_PROYECTO,COD_BODEGA,DESC_BODEGA FROM BODEGA WHERE ESTADO_BODEGA = 'A' AND COD_BODEGA= $v03";
 $consulta03 = oci_parse($conn, $sql03);
          oci_execute($consulta03);    
 
