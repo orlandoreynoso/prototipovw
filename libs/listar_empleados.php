@@ -3,9 +3,9 @@
 include('../libs/conexion-clase.php');
 
 
-//$empresas = "SELECT * FROM PROYECTO";
-
-$sql_productos = "SELECT * FROM PERSONA";
+$sql_productos = "SELECT E.COD_PERSONA AS ,E.USUARIO,E.COD_PUESTO,E.SALARIO_BASE,E.BONIFICACION,P.COD_PUESTO,P.DES_PUESTO
+FROM EMPLEADO E,PUESTO P
+WHERE E.COD_PUESTO = P.COD_PUESTO";
 
 $stid = oci_parse($conn, $sql_productos);
 oci_execute($stid);
@@ -18,11 +18,11 @@ oci_execute($stid);
                 <thead>
                     <tr>
                         <th>COD_PERSONA</th><!--Estado-->
-                        <th>NOMBRES</th>
-                        <th>APELLIDOS</th>
-                        <th>FEC_INGRESO</th>
-                        <th>ESTADO</th>
-                        <th>DIRECCION</th>
+                        <th>USUARIO</th>
+                        <th>SALARIO BASE</th>
+                        <th>BONIFICACION</th>
+                        <th>COD_PUESTO</th>                        
+                        <th>PUESTO</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -37,11 +37,11 @@ oci_execute($stid);
                       while (($row = oci_fetch_object($stid)) != false) {
                         echo '<tr>
                               <td>'.$row->COD_PERSONA.'</td>
-                              <td>'.$row->NOMBRES.'</td>
-                              <td>'.$row->APELLIDOS.'</td>
-                              <td>'.$row->FEC_INGRESO.'</td>
-                              <td>'.$row->ESTADO.'</td>
-                              <td>'.$row->DIRECCION.'</td>
+                              <td>'.$row->USUARIO.'</td>
+                              <td>'.$row->SALARIO_BASE.'</td>
+                              <td>'.$row->BONIFICACION.'</td>
+                              <td>'.$row->COD_PUESTO.'</td>                              
+                              <td>'.$row->DES_PUESTO.'</td>
                         </tr>';
                       }
                     ?>

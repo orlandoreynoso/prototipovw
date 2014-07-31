@@ -313,11 +313,10 @@ function guarda_movimiento_bodega(){
   dia_in=document.nuevo_dato.dia_in.value;
   mes_in=document.nuevo_dato.mes_in.value;
   anio_in=document.nuevo_dato.anio_in.value;
-  usuario=document.nuevo_dato.usuario.value;
   tipo_movimiento=document.nuevo_dato.tipo_movimiento.value;  
-  usuario_movimiento=document.nuevo_dato.usuario_movimiento.value;
   estado=document.nuevo_dato.estado.value;
   tipo_operacion=document.nuevo_dato.tipo_operacion.value;  
+  usuario=document.nuevo_dato.usuario.value;  
   ingreso=document.nuevo_dato.ingreso.value;   
 
 //var parametros  = { "valor_neto1" : valor1, "valor_neto2" : valor2 };
@@ -327,11 +326,10 @@ var parametros  = {
   "dia_in" : dia_in, 
   "mes_in" : mes_in, 
   "anio_in" : anio_in,
-  "usuario" : usuario, 
   "tipo_movimiento" : tipo_movimiento,   
-  "usuario_movimiento" : usuario_movimiento,   
   "estado" : estado,
   "tipo_operacion" : tipo_operacion,  
+  "usuario" : usuario,   
   "ingreso" : ingreso
 };
 
@@ -358,7 +356,6 @@ function LimpiarCampos(){
   anio_in=document.nuevo_dato.anio_in.value="";
   usuario=document.nuevo_dato.usuario.value= "";
   tipo_movimiento=document.nuevo_dato.tipo_movimiento.value= "";  
-  usuario_movimiento=document.nuevo_dato.usuario_movimiento.value= "";  
   estado=document.nuevo_dato.estado.value= "";
   tipo_operacion=document.nuevo_dato.tipo_operacion.value= "";  
   ingreso=document.nuevo_dato.ingreso.value= "";  

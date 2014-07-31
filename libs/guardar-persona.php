@@ -9,9 +9,6 @@ echo 'Recibiendo datos de persona.';
 
 if ($vars['ingreso'] == 'nueva_persona') {
 
-  echo '<p>Ingreso a guardar</p>';
-
-
 $stid = oci_parse($conn,"INSERT INTO PERSONA (COD_PERSONA, NOMBRES,APELLIDOS,FEC_INGRESO,ESTADO,DIRECCION) 
   VALUES(:v01_bv, :v02_bv,:v03_bv, :v07_bv,:v08_bv, :v09_bv)");
 

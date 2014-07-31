@@ -5,9 +5,9 @@
       <ul>
             <li><a  href="#" onClick="mostrar_contenido(100); return false;">Persona</a></li>
             <li><a  href="#" onClick="mostrar_contenido(101); return false;">Puesto</a></li>
-            <li><a  href="#" onClick="mostrar_contenido(102); return false;">Tipo ID</a></li>
+            <li><a  href="#" onClick="mostrar_contenido(102); return false;">Tipo Identificación</a></li>
             <li><a  href="#" onClick="mostrar_contenido(103); return false;">Empleado</a></li>
-            <li><a  href="#" onClick="mostrar_contenido(104); return false;">Empresa</a></li>
+            <li><a  href="#" onClick="mostrar_contenido(104); return false;">Farmacia</a></li>
             <li><a  href="#" onClick="mostrar_contenido(105); return false;">Sucursal</a></li>            
       </ul>
    </li>
@@ -30,24 +30,29 @@
 
     <li><a href="#">Compras</a>
       <ul>
-            <li><a  href="#" onClick="mostrar_contenido(401); return false;">Nueva venta</a></li>                        
-            <li><a  href="#" onClick="mostrar_contenido(402); return false;">Detalle Venta</a></li>   
+            <li><a  href="#" onClick="mostrar_contenido(401); return false;">Orden de compra</a></li>                        
+            <li><a  href="#" onClick="mostrar_contenido(402); return false;">Detalle compra</a></li>   
       </ul>
     </li>    
 
     <li><a href="#">Ventas</a>
       <ul>
-            <li><a  href="#" onClick="mostrar_contenido(501); return false;">Orden de Compra</a></li>                        
-            <li><a  href="#" onClick="mostrar_contenido(502); return false;">Detalle orden de Compra</a></li>   
+            <li><a  href="#" onClick="mostrar_contenido(501); return false;">Nueva venta</a></li>                        
+            <li><a  href="#" onClick="mostrar_contenido(502); return false;">Detalle venta</a></li>   
       </ul>
     </li>    
 
     <li><a href="#">Reportes</a>
       <ul>
-        <li><a href="#" onClick="mostrar_contenido(1); return false;">Empresa</a></li>      	
+        <li><a href="#" onClick="mostrar_contenido(6); return false;">Bodegas</a></li>                                              
+        <li><a href="#" onClick="mostrar_contenido(9); return false;">Clientes</a></li>                                                      
+        <li><a href="#" onClick="mostrar_contenido(5); return false;">Empleados</a></li>                        
+        <li><a href="#" onClick="mostrar_contenido(1); return false;">Farmacias</a></li>      	
+        <li><a href="#" onClick="mostrar_contenido(3); return false;">Inventario Productos</a></li>        
+        <li><a href="#" onClick="mostrar_contenido(7); return false;">Movimiento de Bodega</a></li>                
+        <li><a href="#" onClick="mostrar_contenido(4); return false;">Personas</a></li>                     
       	<li><a href="#" onClick="mostrar_contenido(2); return false;">Sucursales</a></li>
-        <li><a href="#" onClick="mostrar_contenido(3); return false;">Inventario Productos</a></li>
-        <li><a href="#" onClick="mostrar_contenido(4); return false;">Personas</a></li>             
+        <li><a href="#" onClick="mostrar_contenido(8); return false;">ventas</a></li>        
       </ul>
     </li>	
 

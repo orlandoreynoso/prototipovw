@@ -75,7 +75,7 @@ $consulta03 = oci_parse($conn, $sql03);
          oci_execute($consulta03);    
 
 while (($row03 = oci_fetch_row($consulta03)) != false) {
-  echo '<option value="'.$row03[0].'">'.$row03[1].'</option>';
+  echo '<option value="'.$row03[1].'">'.$row03[2].'</option>';
 }
 
 

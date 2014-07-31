@@ -1,7 +1,7 @@
 
 <article class="confirmando_info">
   
-<h1>Ingresar tipo ID</h1>
+<h1>Ingresar tipo Identificación.</h1>
 
 
 <?php

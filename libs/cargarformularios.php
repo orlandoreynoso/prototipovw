@@ -8,15 +8,14 @@ $codigo_x =  $vars['valor_neto1'];
 
 switch($codigo_x){
 
+/*===== REPORTES ====================*/
 	case 1:
 	include('../reporte-empresa.php');
 	break;
 
-
 	case 2:
 	include('../reporte-proyecto.php');
 	break;
-
 
 	case 3:
 	include('../reporte-productos.php');
@@ -25,6 +24,28 @@ switch($codigo_x){
 	case 4:
 	include('../libs/reporte-personas.php');
 	break;
+
+	case 5:
+	include('../libs/reporte-empleados.php');
+	break;
+
+	case 6:
+	include('../libs/reporte-bodegas.php');
+	break;
+
+	case 7:
+	include('../libs/reporte-movimiento-bodega.php');
+	break;
+
+	case 8:
+	include('../libs/reporte-ventas.php');
+	break;
+
+	case 9:
+	include('../libs/reporte-clientes.php');
+	break;	
+
+/*===== INGRESO DE DATOS ====================*/
 
 	case 100:
 	include('../libs/ingreso-persona.php');
@@ -46,6 +67,14 @@ switch($codigo_x){
 	case 201:
 	include('../libs/ingreso-bodega.php');
 	break;
+	
+	/*=========== COMPRAS =======================*/
+
+	case 401:
+	include('../libs/ingreso-orden-compra.php');
+	break;		
+
+	/* =============================================*/	
 
 	case 203:
 	include('../libs/ingreso-movimiento-bodega.php');

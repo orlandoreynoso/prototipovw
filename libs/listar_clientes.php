@@ -1,11 +1,17 @@
 <?php 
 
 include('../libs/conexion-clase.php');
+include('../libs/fecha01.php');
+include('../libs/fecha02.php');
 
-$empresas = "SELECT * FROM PROYECTO";
 
-$stid = oci_parse($conn, $empresas);
+$sql_productos = "SELECT COD_PERSONA,DESCRIPCION,FEC_INGRESO,ESTADO FROM CLIENTE";
+
+
+$stid = oci_parse($conn, $sql_productos);
 oci_execute($stid);
+
+
 
 ?>
 <script type="text/javascript" language="javascript" src="js/refrescar_reportes.js"></script>
@@ -14,34 +20,28 @@ oci_execute($stid);
             <table cellpadding="0" cellspacing="0" border="0" class="display" id="tabla_lista">
                 <thead>
                     <tr>
-                        <th>COD_EMPRESA</th><!--Estado-->
-                        <th>COD_PROYECTO</th>
-                        <th>NOM_PROYECTO</th>
-                        <th>DIRECCION</th>
-                        <th>ESTADO</th>
+                        <th>COD CLIENTE</th>
+                        <th>NOMBRE</th>
+                        <th>ESTADO</th>                                                
+                        <th>FECHA INGRESO</th>                        
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th></th>
                         <th></th>
-                       
-                     
                     </tr>
                 </tfoot>
                   <tbody>
                     <?php
 
                       while (($row = oci_fetch_object($stid)) != false) {
-                          // Use nombres de atributo en mayúsculas para cada columna estándar de Oracle
-
                         echo '<tr>
-                              <td>'.$row->COD_EMPRESA.'</td>
-                              <td>'.$row->COD_PROYECTO.'</td>
-                              <td>'.$row->NOM_PROYECTO.'</td>
-                              <td>'.$row->DIRECCION.'</td>
+                              <td>'.$row->COD_PERSONA.'</td>
+                              <td>'.$row->DESCRIPCION.'</td>
                               <td>'.$row->ESTADO.'</td>
-                        </tr>';    
+                              <td>'.$row->FEC_INGRESO.'</td>                                                            
+                        </tr>';
                       }
                     ?>
                 <tbody>

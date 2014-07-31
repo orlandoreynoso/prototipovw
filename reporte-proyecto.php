@@ -9,7 +9,8 @@
 <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 <!--    FORMATO DE TABLAS    -->
 
- <script type="text/javascript" language="javascript" src="js/lista_proyectos.js"></script>
+ <script type="text/javascript" language="javascript" src="js/refrescar_reportes.js"></script>
 
-<h1>Reporte Proyecto</h1>
+<h1>Reporte de Sucursales</h1>
+<h1>&nbsp;</h1>
 <div id="contenido"></div>

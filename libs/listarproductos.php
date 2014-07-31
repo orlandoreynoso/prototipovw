@@ -13,7 +13,7 @@ $stid = oci_parse($conn, $sql_productos);
 oci_execute($stid);
 
 ?>
-<script type="text/javascript" language="javascript" src="js/lista_productos.js"></script>
+<script type="text/javascript" language="javascript" src="js/refrescar_reportes.js"></script>
 
 
             <table cellpadding="0" cellspacing="0" border="0" class="display" id="tabla_lista">

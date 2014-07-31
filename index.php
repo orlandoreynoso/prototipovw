@@ -31,7 +31,6 @@ echo $filasn;
          }
          else{
 
-   echo 'entro en el ELSE';
 
 echo '<table>';
 

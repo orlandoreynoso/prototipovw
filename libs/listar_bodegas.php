@@ -2,24 +2,29 @@
 
 include('../libs/conexion-clase.php');
 
-$empresas = "SELECT * FROM EMPRESA";
 
-$stid = oci_parse($conn, $empresas);
+$sql_productos = "SELECT B.COD_EMPRESA,B.COD_PROYECTO,B.COD_BODEGA,B.DESC_BODEGA,B.UBICACION,B.ESTADO_BODEGA,
+E.COD_EMPRESA,E.NOM_EMPRESA,P.COD_PROYECTO,P.NOM_PROYECTO
+FROM BODEGA B,EMPRESA E, PROYECTO P
+WHERE 
+B.COD_EMPRESA = E.COD_EMPRESA AND
+B.COD_PROYECTO = P.COD_PROYECTO";
+
+$stid = oci_parse($conn, $sql_productos);
 oci_execute($stid);
 
 ?>
-
 <script type="text/javascript" language="javascript" src="js/refrescar_reportes.js"></script>
-
 
 
             <table cellpadding="0" cellspacing="0" border="0" class="display" id="tabla_lista">
                 <thead>
                     <tr>
-                        <th>COD_EMPRESA</th><!--Estado-->
-                        <th>NOM_EMPRESA</th>
-                        <th>DIRECCION</th>
-                        <th>IDENTIFICACION_LEGAL</th>
+                        <th>COD_BODEGA</th><!--Estado-->
+                        <th>NOMBRE</th>
+                        <th>UBICACION</th>
+                        <th>NOM. FARMACIA</th>
+                        <th>SUCURSAL</th>                        
                         <th>ESTADO</th>
                     </tr>
                 </thead>
@@ -27,23 +32,20 @@ oci_execute($stid);
                     <tr>
                         <th></th>
                         <th></th>
-                       
-                     
                     </tr>
                 </tfoot>
                   <tbody>
                     <?php
 
                       while (($row = oci_fetch_object($stid)) != false) {
-                          // Use nombres de atributo en mayúsculas para cada columna estándar de Oracle
-
                         echo '<tr>
-                              <td>'.$row->COD_EMPRESA.'</td>
+                              <td>'.$row->COD_BODEGA.'</td>
+                              <td>'.$row->DESC_BODEGA.'</td>
+                              <td>'.$row->UBICACION.'</td>
                               <td>'.$row->NOM_EMPRESA.'</td>
-                              <td>'.$row->DIRECCION.'</td>
-                              <td>'.$row->IDENTIFICACION_LEGAL.'</td>
-                              <td>'.$row->ESTADO.'</td>
-                        </tr>';    
+                              <td>'.$row->NOM_PROYECTO.'</td>                              
+                              <td>'.$row->ESTADO_BODEGA.'</td>
+                        </tr>';
                       }
                     ?>
                 <tbody>
@@ -52,6 +54,5 @@ oci_execute($stid);
 <?php 
 oci_free_statement($stid);
 oci_close($conn);
-
 
 ?>

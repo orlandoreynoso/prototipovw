@@ -1,7 +1,8 @@
 
 <article class="confirmando_info">
   
-<h1>Movimiento Bodega</h1>
+<h1>Nueva orden de compra</h1>
+<h1>&nbsp;</h1>
 
 
 <?php
