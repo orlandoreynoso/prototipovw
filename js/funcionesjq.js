@@ -362,3 +362,60 @@ function LimpiarCampos(){
 }
 
 }
+
+/*============= NUEVA ORDEN ========================*/
+
+function guardar_orden(){
+
+ divResultado = document.getElementById('informacion_nuevo_cliente');
+
+  //recogemos los valores de los inputs
+
+  id_orden=document.nuevo_dato.id_orden.value;  
+  id_bodega=document.nuevo_dato.id_bodega.value;    
+  ind_aplicada=document.nuevo_dato.ind_aplicada.value;
+  afecta_bodega=document.nuevo_dato.afecta_bodega.value;
+  id_proveedor=document.nuevo_dato.id_proveedor.value;
+  estado=document.nuevo_dato.estado.value;
+  usuario=document.nuevo_dato.usuario.value;  
+  ingreso=document.nuevo_dato.ingreso.value;    
+
+//var parametros  = { "valor_neto1" : valor1, "valor_neto2" : valor2 };
+var parametros  = { 
+  "id_orden" : id_orden,    
+  "id_bodega" : id_bodega, 
+  "ind_aplicada" : ind_aplicada,
+  "afecta_bodega" : afecta_bodega,   
+  "id_proveedor" : id_proveedor,
+  "estado" : estado,  
+  "usuario" : usuario,   
+  "ingreso" : ingreso
+};
+
+$.ajax({
+  data: parametros,
+  url: 'libs/guardar-nueva-orden.php',
+  type: 'post',
+  async: true,
+  beforeSend: function(){ $("#formulariogenerico").html("Guardando el formulario..."); },
+  //success: function(response){ $("#formulariogenerico").html(response); },
+  //.val()
+    success: function(response){ $("#formulariogenerico").html(response); },
+    error: function() { $("#formulariogenerico").html("Parece que tenemos un error, revisa."); }
+    //  LimpiarCampos();
+});
+
+
+//función para limpiar los campos
+function LimpiarCampos(){
+  id_orden=document.nuevo_dato.id_orden.value = "";  
+  id_bodega=document.nuevo_dato.id_bodega.value = "";    
+  ind_aplicada=document.nuevo_dato.ind_aplicada.value = "";
+  afecta_bodega=document.nuevo_dato.afecta_bodega.value = "";
+  id_proveedor=document.nuevo_dato.id_proveedor.value = "";
+  estado=document.nuevo_dato.estado.value = "";
+  usuario=document.nuevo_dato.usuario.value = "";  
+  ingreso=document.nuevo_dato.ingreso.value = "";     
+}
+
+}

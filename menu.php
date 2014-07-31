@@ -50,6 +50,7 @@
         <li><a href="#" onClick="mostrar_contenido(1); return false;">Farmacias</a></li>      	
         <li><a href="#" onClick="mostrar_contenido(3); return false;">Inventario Productos</a></li>        
         <li><a href="#" onClick="mostrar_contenido(7); return false;">Movimiento de Bodega</a></li>                
+        <li><a href="#" onClick="mostrar_contenido(10); return false;">Ordenes de compra</a></li>                
         <li><a href="#" onClick="mostrar_contenido(4); return false;">Personas</a></li>                     
       	<li><a href="#" onClick="mostrar_contenido(2); return false;">Sucursales</a></li>
         <li><a href="#" onClick="mostrar_contenido(8); return false;">ventas</a></li>        

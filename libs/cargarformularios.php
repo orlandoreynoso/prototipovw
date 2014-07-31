@@ -45,6 +45,10 @@ switch($codigo_x){
 	include('../libs/reporte-clientes.php');
 	break;	
 
+	case 10:
+	include('../libs/reporte-ordenes.php');
+	break;	
+
 /*===== INGRESO DE DATOS ====================*/
 
 	case 100:

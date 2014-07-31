@@ -48,6 +48,58 @@ $max01[0];
       <td><input name="id_orden" type="text" size="28" required="required" value="<?php echo $max01[0]; ?>"/></td>
     </tr>
 
+   <tr>
+        <td>FARMACIA: </td>            
+        <td>  
+            <select name="id_empresa"  class="seleccion">
+            <option selected="selected" value="">[FARMACIA]</option>
+            <?php 
+
+$sql02 = "SELECT COD_EMPRESA,NOM_EMPRESA FROM EMPRESA WHERE ESTADO = 'A'";
+$consulta02 = oci_parse($conn, $sql02);
+         oci_execute($consulta02);    
+
+while (($row02 = oci_fetch_row($consulta02)) != false) {
+  echo '<option value="'.$row02[0].'">'.$row02[1].'</option>';
+}
+
+
+oci_free_statement($consulta02);
+
+
+      ?>
+      
+      </td>
+    </tr> 
+
+
+    <tr>
+        <td>SUCURSAL: </td>            
+        <td>  
+            <select name="id_proyecto"  class="seleccion">
+            <option selected="selected" value="">[SUCURSAL]</option>
+            <?php 
+
+
+/*====== ID MAXIMO DE TIPO =============*/
+
+$sql03 = "SELECT COD_EMPRESA,COD_PROYECTO,NOM_PROYECTO FROM PROYECTO WHERE ESTADO = 'A'";
+$consulta03 = oci_parse($conn, $sql03);
+         oci_execute($consulta03);    
+
+while (($row03 = oci_fetch_row($consulta03)) != false) {
+  echo '<option value="'.$row03[1].'">'.$row03[2].'</option>';
+}
+
+
+oci_free_statement($consulta02);
+
+
+      ?>
+      
+      </td>
+    </tr> 
+	
     <tr>
         <td>BODEGA: </td>            
         <td>  
