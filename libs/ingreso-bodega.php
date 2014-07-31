@@ -8,8 +8,6 @@
 
 include('../libs/conexion-clase.php');
 
-/*====== ID MAXIMO DE TIPO =============*/
-
 $sql01 = "SELECT MAX(COD_BODEGA+1) AS ID_BODEGA FROM BODEGA";
 $consulta01 = oci_parse($conn, $sql01);
          oci_execute($consulta01);    
@@ -43,9 +41,6 @@ $max01[0];
             <select name="id_empresa"  class="seleccion">
             <option selected="selected" value="">[EMPRESA]</option>
             <?php 
-
-
-/*====== ID MAXIMO DE TIPO =============*/
 
 $sql02 = "SELECT COD_EMPRESA,NOM_EMPRESA FROM EMPRESA WHERE ESTADO = 'A'";
 $consulta02 = oci_parse($conn, $sql02);

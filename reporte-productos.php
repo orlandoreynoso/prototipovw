@@ -11,5 +11,5 @@
 
  <script type="text/javascript" language="javascript" src="js/lista_productos.js"></script>
 
-<h1>Reporte Proyecto</h1>
+<h1></h1>
 <div id="contenido"></div>
