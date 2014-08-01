@@ -419,3 +419,100 @@ function LimpiarCampos(){
 }
 
 }
+
+
+/*============= NUEVO TIPO DE PRODUCTO   ========================*/
+
+function guardar_tipo_producto(){
+
+ divResultado = document.getElementById('informacion_nuevo_cliente');
+
+  //recogemos los valores de los inputs
+
+  id_tp=document.nuevo_dato.id_tp.value;
+  descripcion=document.nuevo_dato.descripcion.value;
+  ingreso=document.nuevo_dato.ingreso.value;
+
+//var parametros  = { "valor_neto1" : valor1, "valor_neto2" : valor2 };
+var parametros  = { 
+  "id_tp" : id_tp,
+  "descripcion" : descripcion, 
+  "ingreso" : ingreso
+};
+
+$.ajax({
+  data: parametros,
+  url: 'libs/guardar-tipo-producto.php',
+  type: 'post',
+  async: true,
+  beforeSend: function(){ $("#formulariogenerico").html("Guardando el formulario..."); },
+  //success: function(response){ $("#formulariogenerico").html(response); },
+  //.val()
+    success: function(response){ $("#formulariogenerico").html(response); },
+    error: function() { $("#formulariogenerico").html("Parece que tenemos un error, revisa."); }
+    //  LimpiarCampos();
+});
+
+
+//función para limpiar los campos
+function LimpiarCampos(){
+  id_tp=document.nuevo_dato.id_tp.value = "";
+  descripcion=document.nuevo_dato.descripcion.value = "";
+  ingreso=document.nuevo_dato.ingreso.value = "";
+}
+
+}
+
+/*============= NUEVO PRODUCTO   ========================*/
+
+function guarda_producto(){
+
+ divResultado = document.getElementById('informacion_nuevo_cliente');
+
+  //recogemos los valores de los inputs
+
+  id_producto=document.nuevo_dato.id_producto.value;
+  descripcion=document.nuevo_dato.descripcion.value;
+  id_marca=document.nuevo_dato.id_marca.value;
+  tipo_producto=document.nuevo_dato.tipo_producto.value;
+  es_servicio=document.nuevo_dato.es_servicio.value;
+  precio=document.nuevo_dato.precio.value;
+  ingreso=document.nuevo_dato.ingreso.value;  
+
+//var parametros  = { "valor_neto1" : valor1, "valor_neto2" : valor2 };
+var parametros  = {
+  "id_producto" : id_producto,
+  "descripcion" : descripcion,
+  "id_marca" : id_marca, 
+  "tipo_producto" : tipo_producto,   
+  "es_servicio" : es_servicio,   
+  "precio" : precio,
+  "ingreso" : ingreso
+};
+
+$.ajax({
+  data: parametros,
+  url: 'libs/guardar-producto.php',
+  type: 'post',
+  async: true,
+  beforeSend: function(){ $("#formulariogenerico").html("Guardando el formulario..."); },
+  //success: function(response){ $("#formulariogenerico").html(response); },
+  //.val()
+    success: function(response){ $("#formulariogenerico").html(response); },
+    error: function() { $("#formulariogenerico").html("Parece que tenemos un error, revisa."); }
+    //  LimpiarCampos();
+});
+
+
+//función para limpiar los campos
+function LimpiarCampos(){
+  id_producto=document.nuevo_dato.id_producto.value = "";
+  descripcion=document.nuevo_dato.descripcion.value = "";
+  id_marca=document.nuevo_dato.id_marca.value = "";
+  tipo_producto=document.nuevo_dato.tipo_producto.value = "";  
+  es_servicio=document.nuevo_dato.es_servicio.value = "";
+  precio=document.nuevo_dato.precio.value = "";
+  ingreso=document.nuevo_dato.ingreso.value = ""; 
+}
+
+}

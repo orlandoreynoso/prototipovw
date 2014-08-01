@@ -65,20 +65,30 @@ switch($codigo_x){
 
 	case 103:
 	include('../libs/ingreso-empleado.php');
-	break;		
+	break;
 
 	/*==== Bodegas ===============*/
 	case 201:
 	include('../libs/ingreso-bodega.php');
 	break;
-	
+
+	/*=========== PRODUCTO =====================*/
+
+	case 301:
+	include('../libs/ingreso-tipo-producto.php');
+	break;
+
+	case 302:
+	include('../libs/ingreso-producto.php');
+	break;
+
 	/*=========== COMPRAS =======================*/
 
 	case 401:
 	include('../libs/ingreso-orden-compra.php');
-	break;		
+	break;
 
-	/* =============================================*/	
+	/* =============================================*/
 
 	case 203:
 	include('../libs/ingreso-movimiento-bodega.php');

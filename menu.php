@@ -8,23 +8,23 @@
             <li><a  href="#" onClick="mostrar_contenido(102); return false;">Tipo Identificación</a></li>
             <li><a  href="#" onClick="mostrar_contenido(103); return false;">Empleado</a></li>
             <li><a  href="#" onClick="mostrar_contenido(104); return false;">Farmacia</a></li>
-            <li><a  href="#" onClick="mostrar_contenido(105); return false;">Sucursal</a></li>            
+            <li><a  href="#" onClick="mostrar_contenido(105); return false;">Sucursal</a></li>
       </ul>
    </li>
 
     <li><a href="#">Bodega</a>
       <ul>
-            <li><a  href="#" onClick="mostrar_contenido(201); return false;">Nueva bodega</a></li>            
-            <li><a  href="#" onClick="mostrar_contenido(202); return false;">Detalle bodega</a></li>                        
-            <li><a  href="#" onClick="mostrar_contenido(203); return false;">Movimiento bodega</a></li>                                    
-            <li><a  href="#" onClick="mostrar_contenido(204); return false;">Detalle Movimiento bodega</a></li>                                    
+            <li><a  href="#" onClick="mostrar_contenido(201); return false;">Nueva bodega</a></li>
+            <li><a  href="#" onClick="mostrar_contenido(202); return false;">Detalle bodega</a></li>
+            <li><a  href="#" onClick="mostrar_contenido(203); return false;">Movimiento bodega</a></li>
+            <li><a  href="#" onClick="mostrar_contenido(204); return false;">Detalle Movimiento bodega</a></li>
       </ul>
     </li> 
 
     <li><a href="#">Productos</a>
       <ul>
-            <li><a  href="#" onClick="mostrar_contenido(301); return false;">Tipo Producto</a></li>                        
-            <li><a  href="#" onClick="mostrar_contenido(302); return false;">Producto</a></li>   
+            <li><a  href="#" onClick="mostrar_contenido(301); return false;">Tipo Producto</a></li>
+            <li><a  href="#" onClick="mostrar_contenido(302); return false;">Producto</a></li>
       </ul>
     </li>         
 
