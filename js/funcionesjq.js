@@ -486,3 +486,50 @@ function LimpiarCampos(){
 }
 
 }
+
+
+/*============= NUEVA FARMACIA    ========================*/
+
+function guardar_empresa(){
+
+ divResultado = document.getElementById('informacion_nuevo_cliente');
+
+  id_farmacia=document.nuevo_dato.id_farmacia.value;
+  nombre_farmacia=document.nuevo_dato.nombre_farmacia.value;
+  direccion=document.nuevo_dato.direccion.value;
+  id_legal=document.nuevo_dato.id_legal.value;
+  ingreso=document.nuevo_dato.ingreso.value;  
+
+//var parametros  = { "valor_neto1" : valor1, "valor_neto2" : valor2 };
+var parametros  = {
+  "id_farmacia" : id_farmacia,
+  "nombre_farmacia" : nombre_farmacia,
+  "direccion" : direccion, 
+  "id_legal" : id_legal,   
+  "ingreso" : ingreso
+};
+
+$.ajax({
+  data: parametros,
+  url: 'libs/guardar-empresa.php',
+  type: 'post',
+  async: true,
+  beforeSend: function(){ $("#formulariogenerico").html("Guardando el formulario..."); },
+  //success: function(response){ $("#formulariogenerico").html(response); },
+  //.val()
+    success: function(response){ $("#formulariogenerico").html(response); },
+    error: function() { $("#formulariogenerico").html("Parece que tenemos un error, revisa."); }
+    //  LimpiarCampos();
+});
+
+
+//función para limpiar los campos
+function LimpiarCampos(){
+  id_farmacia=document.nuevo_dato.id_farmacia.value = "";
+  nombre_farmacia=document.nuevo_dato.nombre_farmacia.value = "";
+  direccion=document.nuevo_dato.direccion.value = "";
+  id_legal=document.nuevo_dato.id_legal.value = "";
+  ingreso=document.nuevo_dato.ingreso.value = ""; 
+}
+
+}

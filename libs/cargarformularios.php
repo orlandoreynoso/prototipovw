@@ -10,11 +10,11 @@ switch($codigo_x){
 
 /*===== REPORTES ====================*/
 	case 1:
-	include('../reporte-empresa.php');
+	include('../libs/reporte-empresa.php');
 	break;
 
 	case 2:
-	include('../reporte-proyecto.php');
+	include('../libs/reporte-proyecto.php');
 	break;
 
 	case 3:
@@ -49,6 +49,7 @@ switch($codigo_x){
 	include('../libs/reporte-ordenes.php');
 	break;	
 
+
 /*===== INGRESO DE DATOS ====================*/
 
 	case 100:
@@ -66,6 +67,22 @@ switch($codigo_x){
 	case 103:
 	include('../libs/ingreso-empleado.php');
 	break;
+
+	case 104:
+	include('../libs/reporte-puestos.php');
+	break;
+
+	case 105:
+	include('../libs/reporte-identificacion.php');
+	break;
+
+	case 106:
+	include('../libs/ingreso-empresa.php');
+	break;	
+
+	case 107:
+	include('../libs/ingreso-proyecto.php');
+	break;		
 
 	/*==== Bodegas ===============*/
 	case 201:
@@ -85,6 +102,10 @@ switch($codigo_x){
 	case 303:
 	include('../libs/reporte-productos.php');
 	break;
+
+	case 304:
+	include('../libs/reporte-tipo-productos.php');
+	break;	
 	/*=========== COMPRAS =======================*/
 
 	case 401:
