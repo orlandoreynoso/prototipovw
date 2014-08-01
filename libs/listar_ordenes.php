@@ -1,9 +1,6 @@
 <?php 
 
 include('../libs/conexion-clase.php');
-include('../libs/fecha01.php');
-include('../libs/fecha02.php');
-
 
 $sql_productos = "SELECT 
 OC.COD_EMPRESA,OC.COD_PROYECTO,OC.COD_BODEGA,OC.COD_ORDEN,OC.COD_MOVIMIENTO_BOD,OC.IND_APLICADA,
@@ -13,8 +10,10 @@ P.NOM_PROYECTO,
 PRO.DESCRIPCION,
 B.DESC_BODEGA
 FROM ORDEN_COMPRA OC,EMPRESA E,PROYECTO P, PROVEEDOR PRO,BODEGA B
-WHERE P.COD_PROYECTO = OC.COD_PROYECTO AND
-B.COD_BODEGA = OC.COD_BODEGA";
+WHERE 
+P.COD_PROYECTO = OC.COD_PROYECTO AND
+B.COD_BODEGA = OC.COD_BODEGA AND
+E.COD_EMPRESA = OC.COD_EMPRESA";
 
 
 $stid = oci_parse($conn, $sql_productos);
@@ -28,14 +27,10 @@ oci_execute($stid);
                 <thead>
                     <tr>
                         <th>COD ORDEN</th>
-                        <th>IND. APLICADA</th>
-                        <th>AFECTA BODEGA</th>                                                
+                        <th>IND. APLI.</th>
+                        <th>AFECTA BOD.</th>                                                
                         <th>ESTADO</th>
-                        <th>USUARIO</th>                                                
-                        <th>FARMACIA</th>
                         <th>SUCURSAL</th>                                                                        
-                        <th>BODEGA</th>                        
-                        <th>COD PROVEEDOR</th>              
                         <th>NOMBRE PROVEEDOR</th>                        
                     </tr>
                 </thead>
@@ -54,11 +49,7 @@ oci_execute($stid);
                               <td>'.$row->IND_APLICADA.'</td>
                               <td>'.$row->AFECTA_BODEGA.'</td>
                               <td>'.$row->ESTADO.'</td>
-                              <td>'.$row->USUARIO.'</td>                              
-                              <td>'.$row->NOM_EMPRESA.'</td>
                               <td>'.$row->NOM_PROYECTO.'</td>
-                              <td>'.$row->DESC_BODEGA.'</td>
-                              <td>'.$row->COD_PROVEEDOR.'</td>
                               <td>'.$row->DESCRIPCION.'</td>                              
                         </tr>';
                       }

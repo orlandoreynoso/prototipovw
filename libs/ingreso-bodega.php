@@ -36,31 +36,6 @@ $max01[0];
     </tr>
 
     <tr>
-        <td>EMPRESA: </td>            
-        <td>  
-            <select name="id_empresa"  class="seleccion">
-            <option selected="selected" value="">[EMPRESA]</option>
-            <?php 
-
-$sql02 = "SELECT COD_EMPRESA,NOM_EMPRESA FROM EMPRESA WHERE ESTADO = 'A'";
-$consulta02 = oci_parse($conn, $sql02);
-         oci_execute($consulta02);    
-
-while (($row02 = oci_fetch_row($consulta02)) != false) {
-  echo '<option value="'.$row02[0].'">'.$row02[1].'</option>';
-}
-
-
-oci_free_statement($consulta02);
-
-
-      ?>
-      
-      </td>
-    </tr> 
-
-
-    <tr>
         <td>SUCURSAL: </td>            
         <td>  
             <select name="id_proyecto"  class="seleccion">
@@ -133,7 +108,7 @@ oci_free_statement($consulta02);
 
     <tr>
       <td></td>
-      <td><input name="estado" type="text" size="28" placeholder="ESTADO"/></td>
+      <td><input name="estado" type="text" size="28" placeholder="ESTADO" value="A"/></td>
     </tr>
 
      <tr>

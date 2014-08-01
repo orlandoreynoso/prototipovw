@@ -6,9 +6,11 @@ $vars = $_POST;
 
 if ($vars['ingreso'] == 'nueva_bodega') {
 
-$v01 = $vars['id_bodega'];
-$v02 = $vars['id_empresa'];
-$v03 = $vars['id_proyecto'];
+echo '<p></p>';
+
+
+$v02 = $vars['id_proyecto'];
+$v03 = $vars['id_bodega'];
 $v04 = $vars['nom_bodega'];
 $v05 = $vars['direccion'];
 
@@ -20,22 +22,21 @@ $v09 = $v06."-".$v07."-".$v08;
 $v10 = $vars['estado'];
 
 
+$sql03 = "SELECT COD_EMPRESA FROM PROYECTO WHERE COD_PROYECTO = $v02";
+$consulta03 = oci_parse($conn, $sql03);
+         oci_execute($consulta03);    
 
- $sql01 = "INSERT INTO BODEGA (COD_EMPRESA, COD_PROYECTO,COD_BODEGA,DESC_BODEGA,UBICACION,FEC_CREACION,ESTADO_BODEGA) 
-VALUES ($v02,$v03,$v01,'$v04','$v05', '$v09','$v10')";
+$max03 = oci_fetch_row($consulta03);
+$v01 = $max03[0];
 
-
-    /*$consulta  = "INSERT INTO EMPLEADO (COD_PERSONA,USUARIO,CLAVE,ESTADO,COD_PUESTO,SALARIO_BASE,BONIFICACION,COD_ID_DEFAULT)  
-    VALUES($v01,'".$v02."','".$v03."','".$v04."',$v05,$v06,$v07,$v08)"; */
+$sql01 = "INSERT INTO BODEGA (COD_EMPRESA, COD_PROYECTO,COD_BODEGA,DESC_BODEGA,UBICACION,FEC_CREACION,ESTADO_BODEGA) 
+VALUES ($v01,$v02,$v03,'$v04','$v05', '$v09','$v10')";
 
       $stid = oci_parse($conn,$sql01);
 
       oci_execute($stid, OCI_DEFAULT);
    
-      // Inicia transaccion
       $committed = oci_commit($conn);
-  
-
 
 }
 

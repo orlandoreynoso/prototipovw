@@ -112,12 +112,41 @@ switch($codigo_x){
 	include('../libs/ingreso-orden-compra.php');
 	break;
 
+
+	case 402:
+	include('../libs/ingreso-aplica-orden.php');
+	break;
+
+	case 403:
+	include('../libs/ingreso-revertir-orden.php');
+	break;
+
+	case 404:
+	include('../libs/reporte-ordenes.php');
+	break;
+
+
+
 	/* =============================================*/
 
 	case 203:
 	include('../libs/ingreso-movimiento-bodega.php');
 	break;	
 
+/*========================================================*/
+	case 801:
+	include('../libs/ingreso-producto-bodega.php');
+	break;	
+
+	case 802:
+	include('../libs/ingreso-producto-bodega-quitar.php');
+	break;	
+
+	case 803:
+	include('../libs/reporte-movimientos.php');
+	break;	
+
+/*========================================================*/
 	default :
 	echo ' <h3>Seleccione una opcion GUARDAR</h3>';
 	break;

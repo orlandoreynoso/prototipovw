@@ -3,13 +3,8 @@
 include('../libs/conexion-clase.php');
 
 
-$sql_productos = "SELECT E.NOM_EMPRESA,PRO.NOM_PROYECTO,B.DESC_BODEGA,DB.FECHA_MOVIMIENTO,
-P.ESTADO_PRODUCTO,P.ID_PRODUCTO,P.DES_PRODUCTO,DB.CANTIDAD_ACTUAL,P.PRECIO_PRODUCTO
-FROM DETALLE_BODEGA DB,PRODUCTO P,BODEGA B,PROYECTO PRO,EMPRESA E
-WHERE DB.COD_PRODUCTO = P.COD_PRODUCTO AND
-B.COD_BODEGA = DB.COD_BODEGA AND
-PRO.COD_PROYECTO  = DB.COD_PROYECTO AND
-E.COD_EMPRESA = DB.COD_EMPRESA";
+$sql_productos = "SELECT MB.COD_MOVIMIENTO,E.NOM_EMPRESA,P.NOM_PROYECTO,B.DESC_BODEGA,MB.FEC_MOVIMIENTO,MB.ESTADO_MOVIMIENTO,MB.TIPO_OPERACION,MB.USUARIO
+FROM MOVIMIENTO_BODEGA MB,EMPRESA E,PROYECTO P,BODEGA B WHERE MB.COD_BODEGA = B.COD_BODEGA AND MB.COD_PROYECTO = P.COD_PROYECTO AND MB.COD_EMPRESA = E.COD_EMPRESA ORDER BY MB.COD_MOVIMIENTO";
 
 $stid = oci_parse($conn, $sql_productos);
 oci_execute($stid);
@@ -21,14 +16,14 @@ oci_execute($stid);
             <table cellpadding="0" cellspacing="0" border="0" class="display" id="tabla_lista">
                 <thead>
                     <tr>
-                        <th>FARMACIA</th><!--Estado-->
+                        <th>COD MOVIMIENTO</th><!--Estado-->
+                        <th>FARMACIA</th>
                         <th>SUCURSAL</th>
                         <th>BODEGA</th>
                         <th>FECHA MOV.</th>
                         <th>ESTADO</th>
-                        <th>COD PRODUCTO</th>
-                        <th>DESCRIPCION</th>                        
-                        <th>CANTIDA ACTUAL</th>
+                        <th>TIPO OPERACION</th>                        
+                        <th>USUARIO</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -43,15 +38,13 @@ oci_execute($stid);
                       while (($row = oci_fetch_object($stid)) != false) {
 
                         echo '<tr>
+                              <td>'.$row->COD_MOVIMIENTO.'</td>                        
                               <td>'.$row->NOM_EMPRESA.'</td>
                               <td>'.$row->NOM_PROYECTO.'</td>
                               <td>'.$row->DESC_BODEGA.'</td>
-                              <td>'.$row->FECHA_MOVIMIENTO.'</td>
-                              <td>'.$row->ESTADO_PRODUCTO.'</td>
-                              <td>'.$row->ID_PRODUCTO.'</td>
-                              <td>'.$row->DES_PRODUCTO.'</td>
-                              <td>'.$row->CANTIDAD_ACTUAL.'</td>
-                              <td>'.$row->PRECIO_PRODUCTO.'</td>
+                              <td>'.$row->ESTADO_MOVIMIENTO.'</td>
+                              <td>'.$row->TIPO_OPERACION.'</td>
+                              <td>'.$row->USUARIO.'</td>
                         </tr>';
                       }
                     ?>

@@ -91,7 +91,7 @@ $max_persona[0];
     </tr>    
     <tr>
       <td></td>
-      <td><input name="estado" type="text" size="28" placeholder="ESTADO"/></td>
+      <td><input name="estado" type="text" size="28" placeholder="ESTADO" value="A"/></td>
     </tr>
     <tr>
       <td></td>

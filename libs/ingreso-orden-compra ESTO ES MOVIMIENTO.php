@@ -10,15 +10,6 @@
 include('../libs/conexion-clase.php');
 
 
-
-session_start();
-
-if (!isset($_SESSION["usuario"])){
-    header("location:index.php?nologin=false");
-}
-
-$usuario_registrado = $_SESSION["usuario"];
-
 /*====== ID MAXIMO DE TIPO =============*/
 
 $sql01 = "SELECT MAX(COD_ORDEN+1) AS ID_OC FROM ORDEN_COMPRA";
@@ -44,12 +35,12 @@ $max01[0];
 <table class="tabla01">
 
     <tr>
-      <td>CODIGO ORDEN: </td>      
+      <td>ID ORDEN DE COMPRA: </td>
       <td><input name="id_orden" type="text" size="28" required="required" value="<?php echo $max01[0]; ?>"/></td>
     </tr>
 
     <tr>
-        <td>BODEGA: </td>            
+        <td>BODEGA: </td>
         <td>  
             <select name="id_bodega"  class="seleccion">
             <option selected="selected" value="">[BODEGA]</option>
@@ -72,51 +63,19 @@ oci_free_statement($consulta04);
     </tr> 	
 	
     <tr>
-      <td>INDICACION APLICADA: (Traslado a bodega) </td>
-      <td><input name="ind_aplicada" type="text" size="28" placeholder="S= SI, N = NO"/></td>
+      <td>TIPO MOVIMIENTO: </td>
+      <td><input name="tipo_movimiento" type="text" size="28" placeholder="O =ORDEN, I = IN"/></td>
     </tr>
     <tr>
 
   
     <tr>
-      <td>AFECTA BODEGA: </td>
-      <td><input name="afecta_bodega" type="text" size="28" placeholder="S = SI, N = NO"/></td>
+      <td>TIPO OPERACION: </td>
+      <td><input name="tipo_operacion" type="text" size="28" placeholder="R= RESTA, S = SUMA"/></td>
     </tr>
     <tr>
 
-  
-    <tr>
-        <td>PROVEEDOR: </td>            
-        <td>  
-            <select name="id_proveedor"  class="seleccion">
-            <option selected="selected" value="">[PROVEEDOR]</option>
-            <?php 
 
-
-echo $sql04 = "SELECT COD_PERSONA,DESCRIPCION FROM PROVEEDOR WHERE ESTADO = 'A'";
-$consulta04 = oci_parse($conn, $sql04);
-         oci_execute($consulta04);    
-
-while (($row04 = oci_fetch_row($consulta04)) != false) {
-  echo '<option value="'.$row04[0].'">'.$row04[1].'</option>';
-}
-
-oci_free_statement($consulta04);
-
-    ?>
-      
-      </td>
-    </tr>         
-
-    <tr>
-      <td>ESTADO</td>
-      <td><input name="estado" type="text" size="28" placeholder="A= ACTIVO NA= NO ACTIVO" value="A"/></td>
-    </tr>
-
-    <tr>
-      <td>USUARIO: </td>      
-      <td><input name="usuario" type="text" size="28" value="<?php echo $usuario_registrado; ?>"/></td>
-    </tr>
 
     <tr>
       <td></td>
