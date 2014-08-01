@@ -18,7 +18,7 @@ switch($codigo_x){
 	break;
 
 	case 3:
-	include('../reporte-productos.php');
+	include('../libs/reporte-inventario-productos.php');
 	break;
 
 	case 4:
@@ -82,6 +82,9 @@ switch($codigo_x){
 	include('../libs/ingreso-producto.php');
 	break;
 
+	case 303:
+	include('../libs/reporte-productos.php');
+	break;
 	/*=========== COMPRAS =======================*/
 
 	case 401:

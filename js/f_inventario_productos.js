@@ -9,7 +9,7 @@ $(document).ready(function(){
 
 function verlistado(){ //FUNCION PARA MOSTRAR EL LISTADO EN EL INDEX POR JQUERY
               var randomnumber=Math.random()*11;
-            $.post("libs/listar_productos.php", {
+            $.post("libs/listar_inventario_productos.php", {
                 randomnumber:randomnumber
             }, function(data){
               $("#contenido").html(data);

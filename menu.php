@@ -25,13 +25,14 @@
       <ul>
             <li><a  href="#" onClick="mostrar_contenido(301); return false;">Tipo Producto</a></li>
             <li><a  href="#" onClick="mostrar_contenido(302); return false;">Producto</a></li>
+            <li><a  href="#" onClick="mostrar_contenido(303); return false;">Listado de Productos</a></li>
       </ul>
-    </li>         
+    </li>
 
     <li><a href="#">Compras</a>
       <ul>
-            <li><a  href="#" onClick="mostrar_contenido(401); return false;">Orden de compra</a></li>                        
-            <li><a  href="#" onClick="mostrar_contenido(402); return false;">Detalle compra</a></li>   
+            <li><a  href="#" onClick="mostrar_contenido(401); return false;">Orden de compra</a></li>
+            <li><a  href="#" onClick="mostrar_contenido(402); return false;">Detalle compra</a></li>
       </ul>
     </li>    
 
