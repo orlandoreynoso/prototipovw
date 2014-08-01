@@ -1,0 +1,8 @@
+http://php.net//manual/es/pdo.prepared-statements.php
+http://www.forosdelweb.com/f18/como-llamo-procedimiento-almacenado-oracle-desde-php-1036891/
+http://www.oracle.com/technetwork/articles/fuecks-sps-095636.html
+http://stackoverflow.com/questions/10212818/executing-an-oracle-procedure-using-php-possible
+
+BIEN
+http://php.net/manual/en/function.oci-parse.php
+http://php.net/manual/es/oci8.examples.php

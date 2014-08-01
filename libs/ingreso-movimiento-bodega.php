@@ -71,60 +71,17 @@ oci_free_statement($consulta04);
       </td>
     </tr> 
 
-    <tr>
-      <td>FECHA DE MOVIMIENTO</td>            
-        <td>  
-            <select name="dia_in"  class="seleccion">
-            <option selected="selected" value="">[DIA]</option>
-            <?php 
-      for($dato_mes = 1; $dato_mes <= 31; $dato_mes ++){  echo '<option value="'.$dato_mes.'">'.$dato_mes.'</option>';  }
-      ?>
-            </select>
-            &nbsp;
-            <select name="mes_in">
-            <option selected="selected" value="">[MES]</option>
-                <option value="1">Enero</option>
-                <option value="2">Febrero</option>
-                <option value="3">Marzo</option>
-                <option value="4">Abril</option>
-                <option value="5">Mayo</option>
-                <option value="6">Junio</option>
-                <option value="7">Julio</option>
-                <option value="8">Agosto</option>
-                <option value="9">Septiembre</option>
-                <option value="10">Octubre</option>
-                <option value="11">Noviembre</option>
-                <option value="12">Diciembre</option>
-            </select>
-            &nbsp;  
-             <select name="anio_in">
-            <option selected="selected" value="">[AÑO]</option>
-            <?php 
-      for($dato_year = 1920; $dato_year <= 2030; $dato_year ++){  echo '<option value="'.$dato_year.'">'.$dato_year.'</option>';  }
-      ?>
-            </select>
-      </td>
-    </tr> 
-
+ 
     <tr>
       <td>TIPO MOVIMIENTO: </td>
       <td><input name="tipo_movimiento" type="text" size="28" placeholder="I= IN O = OUT"/></td>
     </tr>
     <tr>
 
-    <tr>
-      <td>ESTADO</td>
-      <td><input name="estado" type="text" size="28" placeholder="A= ACTIVO NA= NO ACTIVO"/></td>
-    </tr>
 
     <tr>
       <td>TIPO OPERACION: </td>      
       <td><input name="tipo_operacion" type="text" size="28" placeholder="S=SALIDA R= RESERVA"/></td>
-    </tr>
-
-    <tr>
-      <td>USUARIO: </td>      
-      <td><input name="usuario" type="text" size="28" value="<?php echo $usuario_registrado; ?>"/></td>
     </tr>
 
     <tr>

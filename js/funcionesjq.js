@@ -308,28 +308,16 @@ function guarda_movimiento_bodega(){
 
   //recogemos los valores de los inputs
 
-  id_mbodega=document.nuevo_dato.id_mbodega.value;  
   id_bodega=document.nuevo_dato.id_bodega.value;  
-  dia_in=document.nuevo_dato.dia_in.value;
-  mes_in=document.nuevo_dato.mes_in.value;
-  anio_in=document.nuevo_dato.anio_in.value;
   tipo_movimiento=document.nuevo_dato.tipo_movimiento.value;  
-  estado=document.nuevo_dato.estado.value;
   tipo_operacion=document.nuevo_dato.tipo_operacion.value;  
-  usuario=document.nuevo_dato.usuario.value;  
   ingreso=document.nuevo_dato.ingreso.value;   
 
 //var parametros  = { "valor_neto1" : valor1, "valor_neto2" : valor2 };
 var parametros  = { 
-  "id_mbodega" : id_mbodega,    
-  "id_bodega" : id_bodega,  
-  "dia_in" : dia_in, 
-  "mes_in" : mes_in, 
-  "anio_in" : anio_in,
+   "id_bodega" : id_bodega,  
   "tipo_movimiento" : tipo_movimiento,   
-  "estado" : estado,
   "tipo_operacion" : tipo_operacion,  
-  "usuario" : usuario,   
   "ingreso" : ingreso
 };
 
@@ -349,14 +337,8 @@ $.ajax({
 
 //función para limpiar los campos
 function LimpiarCampos(){
-  id_mbodega=document.nuevo_dato.id_mbodega.value= "";
   id_bodega=document.nuevo_dato.id_bodega.value= "";  
-  dia_in=document.nuevo_dato.dia_in.value="";
-  mes_in=document.nuevo_dato.mes_in.value="";
-  anio_in=document.nuevo_dato.anio_in.value="";
-  usuario=document.nuevo_dato.usuario.value= "";
   tipo_movimiento=document.nuevo_dato.tipo_movimiento.value= "";  
-  estado=document.nuevo_dato.estado.value= "";
   tipo_operacion=document.nuevo_dato.tipo_operacion.value= "";  
   ingreso=document.nuevo_dato.ingreso.value= "";  
 }
@@ -371,24 +353,16 @@ function guardar_orden(){
 
   //recogemos los valores de los inputs
 
-  id_orden=document.nuevo_dato.id_orden.value;  
   id_bodega=document.nuevo_dato.id_bodega.value;    
-  ind_aplicada=document.nuevo_dato.ind_aplicada.value;
-  afecta_bodega=document.nuevo_dato.afecta_bodega.value;
-  id_proveedor=document.nuevo_dato.id_proveedor.value;
-  estado=document.nuevo_dato.estado.value;
-  usuario=document.nuevo_dato.usuario.value;  
+  tipo_movimiento=document.nuevo_dato.tipo_movimiento.value;
+  tipo_operacion=document.nuevo_dato.tipo_operacion.value;
   ingreso=document.nuevo_dato.ingreso.value;    
 
 //var parametros  = { "valor_neto1" : valor1, "valor_neto2" : valor2 };
 var parametros  = { 
-  "id_orden" : id_orden,    
   "id_bodega" : id_bodega, 
-  "ind_aplicada" : ind_aplicada,
-  "afecta_bodega" : afecta_bodega,   
-  "id_proveedor" : id_proveedor,
-  "estado" : estado,  
-  "usuario" : usuario,   
+  "tipo_movimiento" : tipo_movimiento,
+  "tipo_operacion" : tipo_operacion,   
   "ingreso" : ingreso
 };
 
@@ -408,13 +382,9 @@ $.ajax({
 
 //función para limpiar los campos
 function LimpiarCampos(){
-  id_orden=document.nuevo_dato.id_orden.value = "";  
   id_bodega=document.nuevo_dato.id_bodega.value = "";    
-  ind_aplicada=document.nuevo_dato.ind_aplicada.value = "";
-  afecta_bodega=document.nuevo_dato.afecta_bodega.value = "";
-  id_proveedor=document.nuevo_dato.id_proveedor.value = "";
-  estado=document.nuevo_dato.estado.value = "";
-  usuario=document.nuevo_dato.usuario.value = "";  
+  tipo_movimiento=document.nuevo_dato.tipo_movimiento.value = "";
+  tipo_operacion=document.nuevo_dato.tipo_operacion.value = "";
   ingreso=document.nuevo_dato.ingreso.value = "";     
 }
 

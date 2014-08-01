@@ -6,16 +6,13 @@ include('../libs/fecha02.php');
 
 
 $sql_productos = "SELECT 
-MB.COD_MOVIMIENTO, MB.FEC_MOVIMIENTO,MB.TIPO_MOVIMIENTO,
-MB.ESTADO_MOVIMIENTO,MB.TIPO_OPERACION,MB.USUARIO,
-DMB.CANTIDAD,
-P.ID_PRODUCTO,P.DES_PRODUCTO,P.PRECIO_PRODUCTO,
-E.NOM_EMPRESA, PRO.NOM_PROYECTO
-FROM MOVIMIENTO_BODEGA MB, DETALLE_MOVIMIENTO_BODEGA DMB, PRODUCTO P, EMPRESA E,PROYECTO PRO
-WHERE 
-DMB.COD_PRODUCTO = P.COD_PRODUCTO AND
-MB.COD_MOVIMIENTO  = DMB.COD_MOVIMIENTO AND
-MB.COD_PROYECTO = PRO.COD_PROYECTO";
+P.ID_PRODUCTO,P.DES_PRODUCTO,P.COD_TIPO_PRODUCTO,TP.DES_TIPO_PRODUCTO,
+P.ES_SERVICIO,P.PRECIO_PRODUCTO,P.ESTADO_PRODUCTO,
+P.FECHA_CREACION,M.COD_MARCA,M.DESCRIPCION
+FROM PRODUCTO P, MARCA_PRODUCTO M, TIPO_PRODUCTO TP
+WHERE
+P.COD_MARCA = M.COD_MARCA AND 
+P.COD_TIPO_PRODUCTO  = TP.COD_TIPO_PRODUCTO";
 
 
 $stid = oci_parse($conn, $sql_productos);
@@ -30,18 +27,16 @@ oci_execute($stid);
             <table cellpadding="0" cellspacing="0" border="0" class="display" id="tabla_lista">
                 <thead>
                     <tr>
-                        <th>COD MOV.</th>
-                        <th>FECHA</th>
-                        <th>TIPO MOV.</th>                                                
-                        <th>ESTADO MOV.</th>
-                        <th>TIPO OPERACION.</th>                                                
-                        <th>CANTIDAD</th>              
-                        <th>CODIGO PRODUCTO</th>
-                        <th>DES. PROD.</th>
-                        <th>PRECIO</th>                                                
-                        <th>FARMACIA</th>
-                        <th>SUCURSAL</th>                                                
-                        <th>USUARIO</th>                        
+                        <th>COD PRODUCTO</th>
+                        <th>DESCRIPCION</th>
+                        <th>COD TIPO PROD.</th>
+                        <th>DESCRIPCION.</th>
+                        <th>ESTADO SERVICIO</th>
+                        <th>PRECIO</th>
+                        <th>ESTADO PRODUCTO</th>
+                        <th>FECHA CREACION</th>
+                        <th>COD. MARCA</th>
+                        <th>DESCRIPCION</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -55,18 +50,16 @@ oci_execute($stid);
 
                       while (($row = oci_fetch_object($stid)) != false) {
                         echo '<tr>
-                              <td>'.$row->COD_MOVIMIENTO.'</td>
-                              <td>'.$row->FEC_MOVIMIENTO.'</td>
-                              <td>'.$row->TIPO_MOVIMIENTO.'</td>
-                              <td>'.$row->ESTADO_MOVIMIENTO.'</td>
-                              <td>'.$row->TIPO_OPERACION.'</td>                              
-                              <td>'.$row->CANTIDAD.'</td>
                               <td>'.$row->ID_PRODUCTO.'</td>
                               <td>'.$row->DES_PRODUCTO.'</td>
+                              <td>'.$row->COD_TIPO_PRODUCTO.'</td>
+                              <td>'.$row->DES_TIPO_PRODUCTO.'</td>
+                              <td>'.$row->ES_SERVICIO.'</td>
                               <td>'.$row->PRECIO_PRODUCTO.'</td>
-                              <td>'.$row->NOM_EMPRESA.'</td>
-                              <td>'.$row->NOM_PROYECTO.'</td>                              
-                              <td>'.$row->USUARIO.'</td>                              
+                              <td>'.$row->ESTADO_PRODUCTO.'</td>
+                              <td>'.$row->FECHA_CREACION.'</td>
+                              <td>'.$row->COD_MARCA.'</td>
+                              <td>'.$row->DESCRIPCION.'</td>
                         </tr>';
                       }
                     ?>
